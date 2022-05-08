@@ -51,4 +51,4 @@ production:
   <<: *default
   database: tsumiki_note_production
   username: tsumiki_note
-  password: <%= ENV['TSUMIKI_NOTE_DATABASE_PASSWORD'] %>
+  password: <%= ENV['tsumiki_note_DATABASE_PASSWORD'] %>
