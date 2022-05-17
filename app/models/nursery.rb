@@ -1,2 +1,0 @@
-class Nursery < ApplicationRecord
-end
