@@ -21,9 +21,9 @@ has_many :letters
 | permission          | boolean   | null: false                    |
 | nursery_id          | reference | null: false, foreign_key: true |
 | postal_code         | string    | null: false                    |
-| prefecture_code_id  | integer   | null: false                    |
+| pref                | string    | null: false                    |
 | city                | string    | null: false                    |
-| street              | string    | null: false                    |
+| town                | string    | null: false                    |
 | building            | string    |                                |
 | phone_number        | string    | null: false                    |
 
@@ -39,7 +39,7 @@ has_many :children
 |---------------------|-----------|--------------------------------|
 | class_age           | integer   | null: false                    |
 | class_name          | string    | null: false                    |
-| nursery_id          | integer   | null: false                    |
+| nursery_id          | reference | null: false                    |
 
 ### Association
 belongs_to :nursery
@@ -50,9 +50,10 @@ has_many :children
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
 | name                | string    | null: false                    |
-| birth_ date         | date      | null: false                    |
+| birth_date          | date      | null: false                    |
+| gender_id           | integer   | null: false                    |
 | start_month         | string    | null: false                    |
-| end_month           | string    | null: false                    |
+| end_month           | string    |                                |
 | class_id            | reference | null: false                    |
 | user_id             | reference | null: false                    |
 
@@ -65,6 +66,7 @@ has_many :growths
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
+| month               | string    | null: false                    |
 | weight              | integer   | null: false                    |
 | height              | integer   | null: false                    |
 | child_id            | reference | null: false                    |
