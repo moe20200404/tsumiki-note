@@ -19,7 +19,7 @@ has_many :letters
 | name                | string    | null: false                    |
 | authority_id        | integer   | null: false                    |
 | permission          | boolean   | null: false                    |
-| nursery_id          | reference | null: false, foreign_key: true |
+| nursery_id          | reference | foreign_key: true              |
 | postal_code         | string    | null: false                    |
 | pref                | string    | null: false                    |
 | city                | string    | null: false                    |
@@ -67,6 +67,7 @@ has_many :growths
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
 | month               | string    | null: false                    |
+| inspection_date     | date      | null: false                    |
 | weight              | integer   | null: false                    |
 | height              | integer   | null: false                    |
 | child_id            | reference | null: false                    |
