@@ -4,8 +4,9 @@
 
 .footer {
   height: 10vh;
-  width: 70vw;
-  
+  text-align: center;
+  padding: 5vh;
+  background-color: lemonchiffon;
 }
 
 .copyright {
