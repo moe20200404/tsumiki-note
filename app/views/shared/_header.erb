@@ -1,0 +1,20 @@
+<header class='top-page-header'>
+  <div class='search-bar-contents'>
+    <%= link_to image_tag("logo.png", class:"icon"), "/" %>
+  </div>
+  <div class='nav'>
+    <ul class='lists-left'>
+      <li><%= link_to 'おたより', "#", class: "category-list" %></li>
+      <li><%= link_to '成長記録', "#", class: "brand-list" %></li>
+    </ul>
+    <ul class='lists-right'>
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, "#", class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', "#", method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', "#", class: "login" %></li>
+        <li><%= link_to '新規登録', "#", class: "sign-up" %></li>
+      <% end %>
+    </ul>
+  </div>
+</header>
