@@ -1,9 +1,9 @@
 <%= render "shared/header"%>
 
-<h2>Sign up</h2>
 
 <%= form_with model: @user, url: registration_path(resource_name), id: 'new_user', class: 'new_user', local: true do |f| %>
   <%= render "devise/shared/error_messages", resource: @user %>
+  <h2>Sign up</h2>
 
   <div class="field">
     <%= f.label :email %><br />
@@ -28,42 +28,42 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :authority_id %><br />
     <%= f.text_field :authority_id %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :postal_code %><br />
     <%= f.number_field :postal_code %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :pref %><br />
     <%= f.text_field :pref %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :city %><br />
     <%= f.text_field :city %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :town %><br />
     <%= f.text_field :town %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :building %><br />
     <%= f.text_field :building %>
   </div>
 
-  <div class="feild">
+  <div class="field">
     <%= f.label :phone_number %><br />
     <%= f.number_field :phone_number %>
   </div>
 
-  <div class="actions">
+  <div class="form-bottom-text">
     <%= f.submit "Sign up" %>
   </div>
 <% end %>
