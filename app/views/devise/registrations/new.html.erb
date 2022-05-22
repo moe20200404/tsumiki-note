@@ -30,7 +30,7 @@
 
   <div class="field">
     <%= f.label :authority_id %><br />
-    <%= f.text_field :authority_id %>
+    <%= f.collection_select(:authority_id, Authority.all, :id, :name, {}, {class:"select-box"}) %>
   </div>
 
   <div class="field">
@@ -63,7 +63,7 @@
 
   <div class="field">
     <%= f.label :phone_number %><br />
-    <%= f.number_field :phone_number %>
+    <%= f.text_field :phone_number %>
   </div>
 
   <div class="form-bottom-text">
