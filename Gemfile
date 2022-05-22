@@ -58,5 +58,6 @@ end
 gem 'active_hash'
 gem 'activerecord-import'
 gem 'devise'
+gem 'pry-rails'
 gem 'rename'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
