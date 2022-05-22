@@ -1,0 +1,75 @@
+<%= render "shared/header"%>
+
+
+<%= form_with model: @user, url: registration_path(resource_name), id: 'new_user', class: 'new_user', local: true do |f| %>
+  <%= render "devise/shared/error_messages", resource: @user %>
+  <h2>Sign up</h2>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :authority_id %><br />
+    <%= f.collection_select(:authority_id, Authority.all, :id, :name, {}, {class:"select-box"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :postal_code %><br />
+    <%= f.text_field :postal_code, id: "postal_code" %>
+      <div class="search_btn">
+        <input type="button" value="住所検索" id=search_btn>
+      </div>
+  </div>
+
+  <div class="field">
+    <%= f.label :pref %><br />
+    <%= f.text_field :pref,id: "pref" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :city %><br />
+    <%= f.text_field :city,id: "city" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :town %><br />
+    <%= f.text_field :town, id: "town" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :building %><br />
+    <%= f.text_field :building %>
+  </div>
+
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone_number %>
+  </div>
+
+  <div class="form-bottom-text">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+<%= render "shared/footer"%>

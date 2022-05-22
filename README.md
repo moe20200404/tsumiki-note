@@ -1,15 +1,4 @@
 #　テーブル設計
-## nurseries
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| nursery_name        | string    | null: false                    |
-
-### Association
-has_many :users
-has_many :classes
-has_many :letters
-
 ## users
 
 | Column              | Type      | Options                        |
@@ -19,7 +8,6 @@ has_many :letters
 | name                | string    | null: false                    |
 | authority_id        | integer   | null: false                    |
 | permission          | boolean   | null: false                    |
-| nursery_id          | reference | foreign_key: true              |
 | postal_code         | string    | null: false                    |
 | pref                | string    | null: false                    |
 | city                | string    | null: false                    |
@@ -28,7 +16,6 @@ has_many :letters
 | phone_number        | string    | null: false                    |
 
 ### Association
-belongs_to :nursery
 has_many :letters
 has_many :childcare_fees
 has_many :children
@@ -39,10 +26,8 @@ has_many :children
 |---------------------|-----------|--------------------------------|
 | class_age           | integer   | null: false                    |
 | class_name          | string    | null: false                    |
-| nursery_id          | reference | null: false                    |
 
 ### Association
-belongs_to :nursery
 has_many :children
 
 ## children
@@ -54,8 +39,8 @@ has_many :children
 | gender_id           | integer   | null: false                    |
 | start_month         | string    | null: false                    |
 | end_month           | string    |                                |
-| class_id            | reference | null: false                    |
-| user_id             | reference | null: false                    |
+| class_id            | references| null: false                    |
+| user_id             | references| null: false                    |
 
 ### Association
 belongs_to :class
@@ -70,7 +55,7 @@ has_many :growths
 | inspection_date     | date      | null: false                    |
 | weight              | integer   | null: false                    |
 | height              | integer   | null: false                    |
-| child_id            | reference | null: false                    |
+| child_id            | references| null: false                    |
 
 ### Association
 belongs_to :child
@@ -81,11 +66,9 @@ belongs_to :child
 |---------------------|-----------|--------------------------------|
 | title               | string    | null: false                    |
 | genre_id            | integer   | null: false                    |
-| nursery_id          | reference | null: false                    |
-| user_id             | reference | null: false                    |
+| user_id             | references| null: false                    |
 
 ### Association
-belongs_to :nursery
 belongs_to :user
 
 ## childcare_fees
@@ -94,7 +77,7 @@ belongs_to :user
 |---------------------|-----------|--------------------------------|
 | year_months         | string    | null: false                    |
 | fee                 | integer   | null: false                    |
-| user_id             | reference | null: false                    |
+| user_id             | references| null: false                    |
 
 ### Association
 belongs_to :user
