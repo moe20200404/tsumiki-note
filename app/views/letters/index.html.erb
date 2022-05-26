@@ -1,0 +1,54 @@
+<div class="wrapper">
+  <div class="important_letters">
+  <%# 重要なお知らせがある時表示 %>
+  <% if @important_letters.present? %>
+    <lu class="letters_list">
+      <% @important_letters.each do |letter| %>
+        <li class="letter"><%= letter.title %></li>
+      <% end %>
+    
+    </lu>
+    <div class="link">すべての重要なお知らせを表示する。</div>
+
+  <% else %>
+    重要なお知らせは投稿されていません
+  <% end %>
+  </div>
+
+  <div class="monthly">
+    <div class="month_letters">
+    <%# 毎月のおたよりがあると表示 %>
+    <% if @monthly_letters.present? %>
+      <lu class="letters_list">
+
+      <% @monthly_letters.each do |letter| %>
+        <li class="letter"><%= letter.title %></li>
+      <% end %>
+
+      </lu>
+      <div class="link">すべての毎月のおたよりを表示する。</div>
+
+    <% else %>
+      毎月のおたよりは投稿されていません
+    <% end %>
+    </div>
+
+    <div class="month_letters">
+    <%# 献立表があると表示 %>
+    <% if @menu_letters.present?%>
+      <lu class="letters_list">
+
+      <% @menu_letters.each do |letter| %>
+        <li class="letter"><%= letter.title %></li>
+      <% end %>
+
+      </lu>
+      <div class="link">すべての献立表を表示する。</div>
+    <% else %>
+      毎月のおたよりは投稿されていません
+    <% end %>
+
+    </div>
+  </div>
+</div>
+

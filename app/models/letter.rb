@@ -1,5 +1,6 @@
 class Letter < ApplicationRecord
   belongs_to :user
+  has_one_attached :pdf_file
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :genre
