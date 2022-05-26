@@ -13,12 +13,15 @@ class LettersController < ApplicationController
     @letter = Letter.new(letter_params)
     if @letter.valid?
       @letter.save
+      redirect_to root_path
+    else
+      render :new
     end
   end
 
   private
 
   def letter_params
-    params.permit(:title, :genre)
+    params.require(:letter).permit(:title, :genre_id).merge(user_id: current_user.id)
   end
 end
