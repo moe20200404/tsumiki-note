@@ -11,7 +11,9 @@
   <% if @important_letters.present? %>
     <lu class="letters_list">
       <% @important_letters.each do |letter| %>
-        <li class="letter"><%= letter.title %></li>
+        <li class="letter"><%= letter.title %></br>
+          <%= image_tag letter.pdf_file.preview(resize: '100x100'), class: 'letter_file' if letter.pdf_file.present?%>
+        </li>
       <% end %>
     
     </lu>

@@ -20,8 +20,9 @@ class LettersController < ApplicationController
   end
 
   private
+  
 
   def letter_params
-    params.require(:letter).permit(:title, :genre_id).merge(user_id: current_user.id)
+    params.require(:letter).permit(:title, :genre_id, :pdf_file).merge(user_id: current_user.id)
   end
 end

@@ -16,6 +16,14 @@
   </div>
 
   <div class="letter_field">
+    <label class="form-pdf">
+      <span class="pdf-file">画像</span>
+      <%= f.file_field :pdf_file, class: 'hidden' %>
+    </label>
+  </div>
+
+
+  <div class="letter_field">
     <%= f.submit "登録する" , class:"btn" %>
 <% end %>
     <%=link_to 'もどる', root_path, class:"back-btn" %>
