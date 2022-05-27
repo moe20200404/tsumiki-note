@@ -1,8 +1,10 @@
 class LettersController < ApplicationController
+  before_action :authenticate_user!
+
   def index
-    @important_letters = Letter.where(genre_id: 4).order(updated_at: :desc).limit(2)
-    @monthly_letters = Letter.where(genre_id: 2).order(updated_at: :desc).limit(1)
-    @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(1)
+    @important_letters = Letter.where(genre_id: 4).order(updated_at: :desc).limit(6)
+    @monthly_letters = Letter.where(genre_id: 2).order(updated_at: :desc).limit(6)
+    @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(6)
   end
 
   def new

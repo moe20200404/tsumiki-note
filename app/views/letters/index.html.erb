@@ -11,11 +11,10 @@
   <% if @important_letters.present? %>
     <lu class="letters_list">
       <% @important_letters.each do |letter| %>
-        <li class="letter"><%= letter.title %></br>
-          <%= image_tag letter.pdf_file.preview(resize: '100x100'), class: 'letter_file' if letter.pdf_file.present?%>
+        <li class="letter">
+          <%= link_to letter.title  , url_for(letter.pdf_file) %>
         </li>
       <% end %>
-    
     </lu>
     <div class="link">すべての重要なお知らせを表示する。</div>
 
@@ -31,7 +30,9 @@
       <lu class="letters_list">
 
       <% @monthly_letters.each do |letter| %>
-        <li class="letter"><%= letter.title %></li>
+        <li class="letter">
+          <%= link_to letter.title  , url_for(letter.pdf_file) %>
+        </li>
       <% end %>
 
       </lu>
@@ -48,7 +49,9 @@
       <lu class="letters_list">
 
       <% @menu_letters.each do |letter| %>
-        <li class="letter"><%= letter.title %></li>
+        <li class="letter">
+          <%= link_to letter.title  , url_for(letter.pdf_file) %>
+        </li>
       <% end %>
 
       </lu>

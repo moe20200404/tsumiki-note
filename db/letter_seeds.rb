@@ -20,6 +20,6 @@
     )
     sleep 1
     letter.save
-    # binding.pry
+    binding.pry
   end 
 end
