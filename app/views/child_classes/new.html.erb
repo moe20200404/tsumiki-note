@@ -1,0 +1,33 @@
+<div class="wrapper">
+
+  <%= render partial: "shared/nursery_menu.erb" %>
+
+
+  <div class="back">
+    <%= render 'shared/error_messages', resource: @child_class %>
+  </div>
+  
+  <div class="child_class_lists">
+
+    <%= form_with(model: @child_class,local: true, class:'new_child_class' ) do |f| %>
+
+      <div class="class_field">
+        <%= f.label :class_age %>
+        <%= f.text_field :class_age, autofocus: true %>
+      </div>
+
+      <div class="class_field">
+        <%= f.label :class_name %>
+        <%= f.text_field :class_name %>
+      </div>
+
+      <div class="class_field">
+        <%= f.submit "登録する" , class:"btn" %>
+      </div>
+
+    <% end %>
+  </div>
+  <div class="back">
+    <%= link_to '戻る', child_classes_path  %>
+  </div>
+</div>

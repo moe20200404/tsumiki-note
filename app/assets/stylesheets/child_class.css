@@ -1,0 +1,26 @@
+.child_class_lists {
+  padding: 5vh 5vw;
+  display: flex;
+}
+
+.child_class_list_left{
+  width: 30vw;
+  height: 10vh;
+  display: inline;
+}
+
+.child_class_list_right{
+  width: 30vw;
+  height: 10vh;
+  display: inline;
+}
+
+.back{
+  padding: 0 5vw;
+}
+
+.field_with_errors{
+  display: inline;
+  color: red;
+
+}

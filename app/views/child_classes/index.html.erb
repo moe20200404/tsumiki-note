@@ -8,9 +8,12 @@
       <li>
         <div class="child_class_list_left"><%= child_class.class_age %>児クラス</div>
         <div class="child_class_list_right"><%= child_class.class_name %>組さん</div>
+        <%= link_to "変更","#", class: "btn_edit" %>
+        <%= link_to "削除", "#", method: :delete, class: "btn_delete" %>
       </li>
     <% end %>
-    <%= link_to 'クラスを新しく登録する', "#" %>
+    <br/>
+    <%= link_to 'クラスを新しく登録する', new_child_class_path %>
     </ul>
   </div>
 </div>
