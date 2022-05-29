@@ -20,7 +20,7 @@ has_many :letters
 has_many :childcare_fees
 has_many :children
 
-## classes
+## child_classes
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
