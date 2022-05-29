@@ -4,7 +4,7 @@
 
 .top-page-header {
   width: 100vw;
-  padding: 2vh 15vw;
+  padding: 2vh 10vw;
   display: flex;
   background-color: lemonchiffon;
 }
@@ -43,24 +43,11 @@
   color: #333333;
 }
 
-.user-nickname {
-  margin-right: 3vw;
-  color: #333333;
-  font-weight: bold;
-}
-
-
-.logout {
-  color: #333333;
-}
-
-.login {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
+.user-name,
+.logout,
+.login,
 .sign-up {
   text-decoration: none;
+  margin-right: 3vw;
   color: #333333;
 }

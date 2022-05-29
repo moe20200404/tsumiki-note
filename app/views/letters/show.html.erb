@@ -1,0 +1,28 @@
+<div class="wrapper">
+  <% if current_user.authority_id == 3 %>
+    <div class="nursery_menu">
+      保育園メニュー
+      <%= link_to 'おたより登録', new_letter_path, class: "menu-list" %>
+    </div>
+  <% end %>
+
+  <div class="important_letters">
+  <%# 重要なお知らせがある時表示 %>
+  <% if @letters.present? %>
+    <lu class="letters_list">
+      <% @letters.each do |letter| %>
+
+      <%= render partial: "shared/letter_show", locals: { letter: letter } %>
+
+      <% end %>
+    </lu>
+
+  <% else %>
+    <%= Genre.find(params[:id]).name %>は投稿されていません
+  <% end %>
+  </div>
+
+    </div>
+  </div>
+</div>
+

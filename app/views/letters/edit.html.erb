@@ -1,0 +1,9 @@
+<div class="wrapper">
+
+  <%= render 'shared/error_messages', resource: @letter %>
+
+  <h2>おたよりの変更</h2>
+
+  <%= render partial: "shared/letter_form", locals:{ letter: @letter}  %>
+
+</div>

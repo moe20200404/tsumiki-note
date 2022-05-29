@@ -1,0 +1,45 @@
+.important_letters{
+  height: 40vh;
+  width: 70vw;
+  padding: 5px;
+  list-style: none;
+  margin: 0 auto;
+}
+
+.monthly{
+  display: flex;
+  justify-content: space-between;
+  
+}
+
+.month_letters{
+  height: 40vh ;
+  width: 30vw;
+  list-style: none;
+  padding: 5px;
+  margin: 0 auto;
+}
+
+.letters_list{
+  list-style: none;
+}
+
+.nursery_menu{
+  background-color: orange;
+}
+
+.btn_edit,
+.btn_delete{
+  background: orange;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}
+
+.btn_delete{
+  background: red;
+}
