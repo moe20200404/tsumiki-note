@@ -18,8 +18,9 @@
       io: File.open('public/ex_letter.pdf'), 
       filename: 'file.pdf'
     )
-    sleep 1
     letter.save
-    binding.pry
+    if i == 1
+      binding.pry
+    end
   end 
 end
