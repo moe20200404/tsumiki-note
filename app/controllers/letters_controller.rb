@@ -7,6 +7,10 @@ class LettersController < ApplicationController
     @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(6)
   end
 
+  def show
+    @letters = Letter.where(genre_id: params[:id])
+  end
+
   def new
     @letter = Letter.new
   end
