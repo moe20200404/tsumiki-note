@@ -1,32 +1,9 @@
 <div class="wrapper">
 
-<%= form_with model: @letter, url: letter_path, id: 'new_letter', class: 'new_letter', local: true do |f| %>
   <%= render 'shared/error_messages', resource: @letter %>
 
   <h2>おたよりの変更</h2>
 
-  <div class="letter_field">
-    <%= f.label :title %><br />
-    <%= f.text_field :title, autofocus: true %>
-  </div>
-
-  <div class="letter_field">
-    <%= f.label :genre_id %>
-    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-category"}) %>
-  </div>
-
-  <div class="letter_field">
-    <label class="form-pdf">
-      <span class="pdf-file">ファイル</span>
-      <%= f.file_field :pdf_file, class: 'hidden' %>
-    </label>
-  </div>
-
-
-  <div class="letter_field">
-    <%= f.submit "登録する" , class:"btn" %>
-<% end %>
-    <%=link_to 'もどる', root_path, class:"back-btn" %>
-  </div>
+  <%= render partial: "shared/letter", locals:{ letter: @letter}  %>
 
 </div>

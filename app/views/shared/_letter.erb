@@ -1,0 +1,28 @@
+<%= form_with(model: @letter, local: true, id: 'new_letter', class: 'new_letter') do |f| %>
+
+  <div class="letter_field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title, autofocus: true %>
+  </div>
+
+  <div class="letter_field">
+    <%= f.label :genre_id %>
+    <%= f.collection_select(:genre_id, Genre.all, :id, :name, {}, {class:"select-box", id:"genre-category"}) %>
+  </div>
+
+  <div class="letter_field">
+    <label class="form-pdf">
+      <span class="pdf-file">ファイル</span>
+      <%= f.file_field :pdf_file, class: 'hidden' %>
+    </label>
+  </div>
+
+  <div class="letter_field">
+    <%= f.submit "登録する" , class:"btn" %>
+  </div>
+  
+<% end %>
+
+  <div class="letter_field">
+    <%=link_to 'もどる', root_path, class:"back-btn" %>
+  </div>
