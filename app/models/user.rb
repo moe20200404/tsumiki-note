@@ -6,7 +6,6 @@ class User < ApplicationRecord
 
   has_many :letters
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :authority
 
