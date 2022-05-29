@@ -1,0 +1,16 @@
+<div class="wrapper">
+
+  <%= render partial: "shared/nursery_menu.erb" %>
+
+  <div class="child_class_lists">
+    <ul>
+    <% @child_classes.each do |child_class| %>
+      <li>
+        <div class="child_class_list_left"><%= child_class.class_age %>児クラス</div>
+        <div class="child_class_list_right"><%= child_class.class_name %>組さん</div>
+      </li>
+    <% end %>
+    <%= link_to 'クラスを新しく登録する', "#" %>
+    </ul>
+  </div>
+</div>

@@ -1,9 +1,9 @@
-class ChildClassController < ApplicationController
+class ChildClassesController < ApplicationController
   before_action :authenticate_user!
   before_action :nursery_user!
 
   def index
-    @child_classes = ChildClass.ApplicationController
+    @child_classes = ChildClass.all
   end
 
   private
