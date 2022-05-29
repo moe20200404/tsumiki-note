@@ -1,0 +1,9 @@
+<%# おたよりリンク %>
+
+        <li class="letter">
+          <%= link_to letter.title  , url_for(letter.pdf_file), target: "_blank" %>
+        <%# 保育士の場合は、編集ボタンと %>
+        <% if current_user.authority_id == 3 %>
+          <%= link_to "変更",edit_letter_path(letter.id), class: "btn_edit" %>
+        <% end %>
+        </li>

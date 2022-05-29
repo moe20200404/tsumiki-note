@@ -13,16 +13,27 @@ class LettersController < ApplicationController
 
   def create
     @letter = Letter.new(letter_params)
-    if @letter.valid?
-      @letter.save
+    if @letter.save
       redirect_to root_path
     else
       render :new
     end
   end
 
+  def edit
+    @letter = Letter.find(params[:id])
+  end
+
+  def update
+    @letter = Letter.find(params[:id])
+    if @letter.update(letter_params)
+      redirect_to root_path
+    else
+      render :edit
+    end
+  end
+
   private
-  
 
   def letter_params
     params.require(:letter).permit(:title, :genre_id, :pdf_file).merge(user_id: current_user.id)

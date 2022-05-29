@@ -11,9 +11,9 @@
   <% if @important_letters.present? %>
     <lu class="letters_list">
       <% @important_letters.each do |letter| %>
-        <li class="letter">
-          <%= link_to letter.title  , url_for(letter.pdf_file) %>
-        </li>
+
+      <%= render partial: "shared/letter_show", locals: { letter: letter } %>
+
       <% end %>
     </lu>
     <div class="link">すべての重要なお知らせを表示する。</div>
@@ -30,9 +30,9 @@
       <lu class="letters_list">
 
       <% @monthly_letters.each do |letter| %>
-        <li class="letter">
-          <%= link_to letter.title  , url_for(letter.pdf_file) %>
-        </li>
+
+      <%= render partial: "shared/letter_show", locals: { letter: letter } %>
+
       <% end %>
 
       </lu>
@@ -49,9 +49,9 @@
       <lu class="letters_list">
 
       <% @menu_letters.each do |letter| %>
-        <li class="letter">
-          <%= link_to letter.title  , url_for(letter.pdf_file) %>
-        </li>
+
+      <%= render partial: "shared/letter_show", locals: { letter: letter } %>
+
       <% end %>
 
       </lu>
