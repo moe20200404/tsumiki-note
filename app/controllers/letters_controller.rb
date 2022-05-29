@@ -33,6 +33,12 @@ class LettersController < ApplicationController
     end
   end
 
+  def destroy
+    @letter = Letter.find(params[:id])
+    @letter.destroy
+    redirect_to root_path
+  end
+
   private
 
   def letter_params

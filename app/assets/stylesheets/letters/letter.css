@@ -28,7 +28,8 @@
   background-color: orange;
 }
 
-.btn_edit{
+.btn_edit,
+.btn_delete{
   background: orange;
   margin-left: 8px;
   padding: 3px;
@@ -37,4 +38,8 @@
   font-size: 12px;
   font-weight: bold;
   color: #333;
+}
+
+.btn_delete{
+  background: red;
 }
