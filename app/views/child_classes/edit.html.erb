@@ -1,0 +1,13 @@
+<%= render partial: "shared/nursery_menu.erb" %>
+
+<div class="wrapper">
+
+  <div class="back_errors">
+    <%= render 'shared/error_messages', resource: @child_class %>
+  </div>
+  
+  <%= render partial: "shared/child_class_show.erb",lovals:{ child_class: @child_classes } %>
+
+  <%= render partial: "shared/child_class_form" ,locals:{ child_classes: @child_class}%>
+
+</div>

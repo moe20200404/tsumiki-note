@@ -3,7 +3,7 @@
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
-| email               | string    | null: false                    |
+| email               | string    | null: false, unique: true      |
 | encrypted_password  | string    | null: false                    |
 | name                | string    | null: false                    |
 | authority_id        | integer   | null: false                    |
@@ -20,12 +20,12 @@ has_many :letters
 has_many :childcare_fees
 has_many :children
 
-## classes
+## child_classes
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
-| class_age           | integer   | null: false                    |
-| class_name          | string    | null: false                    |
+| class_age           | integer   | null: false, unique: true      |
+| class_name          | string    | null: false, unique: true      |
 
 ### Association
 has_many :children
