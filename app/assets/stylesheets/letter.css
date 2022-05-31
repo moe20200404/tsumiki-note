@@ -1,7 +1,16 @@
+.wrapper{
+  height: 80vh;
+  background-size: cover;
+  width: 80vw;
+  margin: 0px auto;
+  padding: 25px;
+  background-color: #FFFFDD;
+}
+
+
 .important_letters{
   height: 40vh;
   width: 70vw;
-  padding: 5px;
   list-style: none;
   margin: 0 auto;
 }
@@ -16,7 +25,6 @@
   height: 40vh ;
   width: 30vw;
   list-style: none;
-  padding: 5px;
   margin: 0 auto;
 }
 
@@ -46,4 +54,8 @@
 
 .btn_delete{
   background: red;
+}
+
+.li{
+  margin-bottom: 5px;
 }

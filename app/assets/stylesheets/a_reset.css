@@ -126,11 +126,3 @@ legend {
 #yui3-css-stamp.cssreset { display: none; }
 
 
-
-.wrapper{
-  height: 80vh;
-  background-size: cover;
-  width: 80vw;
-  margin: 0px auto;
-  background-color: #FFFFDD;
-}
