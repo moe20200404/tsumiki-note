@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_29_063314) do
+ActiveRecord::Schema.define(version: 2022_06_02_201347) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -38,6 +38,20 @@ ActiveRecord::Schema.define(version: 2022_05_29_063314) do
     t.string "class_name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "birth_date", null: false
+    t.integer "gender_id", null: false
+    t.string "start_month", null: false
+    t.string "end_month"
+    t.bigint "class_id_id", null: false
+    t.bigint "user_id_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["class_id_id"], name: "index_children_on_class_id_id"
+    t.index ["user_id_id"], name: "index_children_on_user_id_id"
   end
 
   create_table "letters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

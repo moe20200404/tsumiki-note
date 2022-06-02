@@ -40,7 +40,7 @@ has_many :children
 | start_month         | string    | null: false                    |
 | end_month           | string    |                                |
 | class_id            | references| null: false                    |
-| user_id             | references| null: false                    |
+| user_id             | references|                                |
 
 ### Association
 belongs_to :class
