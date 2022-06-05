@@ -1,6 +1,10 @@
-class Child < ApplicationRecord
-  belongs_to :class
+class UsersChild < ApplicationRecord
+  belongs_to :child_class
   belongs_to :user
+
+
+  extend ActiveHash::Associations::ActiveRecordExtensions
+  belongs_to :gender
 
   with_options presence: true do
     validates :name
@@ -8,6 +12,5 @@ class Child < ApplicationRecord
     validates :gender_id
     validates :start_month
     validates :class_id
-    validates :user_id
   end
 end

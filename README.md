@@ -18,7 +18,7 @@
 ### Association
 has_many :letters
 has_many :childcare_fees
-has_many :children
+has_many :users_children
 
 ## child_classes
 
@@ -28,9 +28,9 @@ has_many :children
 | class_name          | string    | null: false, unique: true      |
 
 ### Association
-has_many :children
+has_many :users_children
 
-## children
+## users_children
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
@@ -43,7 +43,7 @@ has_many :children
 | user_id             | references|                                |
 
 ### Association
-belongs_to :class
+belongs_to :child_class
 belongs_to :user
 has_many :growths
 
@@ -58,7 +58,7 @@ has_many :growths
 | child_id            | references| null: false                    |
 
 ### Association
-belongs_to :child
+belongs_to :users_child
 
 ## letters
 
