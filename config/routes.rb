@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   root to: "letters#index"
   resources :letters
   resources :child_classes, only: [:index, :new, :create, :destroy, :update, :edit]
-  resources :children, only: [:index, :new, :create]
+  resources :users_children, only: [:index, :new, :create]
 end

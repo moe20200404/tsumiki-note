@@ -2,7 +2,7 @@
     <ul>
     <% @child_classes.each do |child_class| %>
       <li>
-        <div class="child_class_list_left"><%= child_class.class_age %>児クラス</div>
+        <div class="child_class_list_left"><%= child_class.class_age %>才児クラス</div>
         <div class="child_class_list_right"><%= child_class.class_name %>組さん</div>
         <%= link_to "変更", edit_child_class_path(child_class.id), class: "btn_edit" %>
         <%= link_to "削除", child_class_path(child_class.id), method: :delete, class: "btn_delete" %>

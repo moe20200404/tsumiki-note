@@ -7,8 +7,8 @@ class CreateUsersChildren < ActiveRecord::Migration[6.0]
       t.integer :gender_id,    null: false          
       t.string :start_month,   null: false          
       t.string :end_month             
-      t.references :class_id,  null: false            
-      t.references :user_id,   null: false          
+      t.references :child_class,  null: false            
+      t.references :user,   null: false          
       t.timestamps
     end
   end

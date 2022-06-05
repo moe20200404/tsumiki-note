@@ -11,6 +11,7 @@ class UsersChild < ApplicationRecord
     validates :birth_date
     validates :gender_id
     validates :start_month
-    validates :class_id
+    validates :child_class
+    validates :user
   end
 end

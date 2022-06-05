@@ -40,18 +40,13 @@ ActiveRecord::Schema.define(version: 2022_06_05_003944) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "children", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.date "birth_date", null: false
-    t.integer "gender_id", null: false
-    t.string "start_month", null: false
-    t.string "end_month"
-    t.bigint "class_id_id", null: false
-    t.bigint "user_id_id"
+  create_table "letters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "genre_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["class_id_id"], name: "index_children_on_class_id_id"
-    t.index ["user_id_id"], name: "index_children_on_user_id_id"
+    t.index ["user_id"], name: "index_letters_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,12 +75,12 @@ ActiveRecord::Schema.define(version: 2022_06_05_003944) do
     t.integer "gender_id", null: false
     t.string "start_month", null: false
     t.string "end_month"
-    t.bigint "class_id_id", null: false
-    t.bigint "user_id_id", null: false
+    t.bigint "child_class_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["class_id_id"], name: "index_users_children_on_class_id_id"
-    t.index ["user_id_id"], name: "index_users_children_on_user_id_id"
+    t.index ["child_class_id"], name: "index_users_children_on_child_class_id"
+    t.index ["user_id"], name: "index_users_children_on_user_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
