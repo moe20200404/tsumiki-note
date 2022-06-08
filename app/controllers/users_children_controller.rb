@@ -5,13 +5,12 @@ class UsersChildrenController < ApplicationController
   end
 
   def new
-    binding.pry
-    @child = Child.new
+    @users_child = UsersChild.new
   end
 
   def create
-    @child = Child.new(child_params)
-    if @child.save
+    @users_child = UsersChild.new(child_params)
+    if @users_child.save
       redirect_to action: 'index'
     else
       render :new
@@ -27,9 +26,14 @@ private
     when 3
       @users_children = UsersChild.all
     else
-      binding.pry
       redirect_to root_path
     end
+  end
+
+  def child_params
+    params.require(:users_child).permit(
+      :name, :birth_date, :gender_id, :start_month, :child_class_id, :user_id
+    )
   end
 
 end
