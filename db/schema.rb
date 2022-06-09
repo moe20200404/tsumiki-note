@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_05_29_063314) do
+ActiveRecord::Schema.define(version: 2022_06_08_151517) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -33,11 +33,25 @@ ActiveRecord::Schema.define(version: 2022_05_29_063314) do
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
-  create_table "child_classes", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "class_age", null: false
-    t.string "class_name", null: false
+  create_table "grades", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "age", null: false
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "kids", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "birth_date", null: false
+    t.integer "gender_id", null: false
+    t.string "start_month", null: false
+    t.string "end_month"
+    t.bigint "grade_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["grade_id"], name: "index_kids_on_grade_id"
+    t.index ["user_id"], name: "index_kids_on_user_id"
   end
 
   create_table "letters", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

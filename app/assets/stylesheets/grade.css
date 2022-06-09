@@ -1,13 +1,13 @@
-.child_class_lists {
+.grade_lists {
   display: flex;
 }
 
-.child_class_list_left{
-  width: 80px;
+.grade_list_age{
+  width: 100px;
   display: inline-block;
 }
 
-.child_class_list_right{
+.grade_list_name{
   width: 200px;
   display: inline-block;
 }
@@ -21,6 +21,6 @@
   color: red;
 }
 
-.class_field{
+.grade_field{
   margin: 5px 0;
 }

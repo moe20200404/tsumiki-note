@@ -18,19 +18,19 @@
 ### Association
 has_many :letters
 has_many :childcare_fees
-has_many :children
+has_many :kids
 
-## child_classes
+## grade
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
-| class_age           | integer   | null: false, unique: true      |
-| class_name          | string    | null: false, unique: true      |
+| age                 | integer   | null: false                    |
+| name                | string    | null: false, unique: true      |
 
 ### Association
-has_many :children
+has_many :kids
 
-## children
+## kid
 
 | Column              | Type      | Options                        |
 |---------------------|-----------|--------------------------------|
@@ -39,11 +39,11 @@ has_many :children
 | gender_id           | integer   | null: false                    |
 | start_month         | string    | null: false                    |
 | end_month           | string    |                                |
-| class_id            | references| null: false                    |
-| user_id             | references| null: false                    |
+| grade_id            | references| null: false                    |
+| user_id             | references|                                |
 
 ### Association
-belongs_to :class
+belongs_to :grade
 belongs_to :user
 has_many :growths
 
@@ -58,7 +58,7 @@ has_many :growths
 | child_id            | references| null: false                    |
 
 ### Association
-belongs_to :child
+belongs_to :kid
 
 ## letters
 

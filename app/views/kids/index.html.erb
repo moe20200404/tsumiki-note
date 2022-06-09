@@ -1,0 +1,88 @@
+<%= render partial: "shared/nursery_menu.erb" %>
+
+<div class="wrapper">
+  <ul class="kid_lists">
+    <%# 項目表示 %>
+    <li class="kid_list">
+      <div class="kid_list_top">
+          <div class="kid_list_class">
+            クラス名
+          </div>
+
+
+          <div class="kid_list_name">
+            名前
+          </div>
+
+          <% if current_user.authority_id == 3%>
+            <%= link_to "変更", "#", class: "btn_edit" %>
+            <%= link_to "削除", "#", method: :delete, class: "btn_delete" %>
+          <% end %>
+      </div>
+
+      <div class="kid_list_bottom">
+          <div class="kid_list_birthday">
+            誕生日
+          </div>
+          <div class="kid_list_age_in_month">
+            月齢
+          </div>
+
+          <div class="kid_list_user">
+            保護者名
+          </div>
+
+        </div>
+        </li>
+
+
+    <% @kids.each do |kid| %>
+    <li class="kid_list">
+
+      <div class="kid_list_top">
+
+
+        <div class="kid_list_class">
+        <%= kid.grade.name %>組さん
+        </div>
+
+        <div class="kid_list_name">
+        <%= kid.name %>
+        </div>
+
+        <% if current_user.authority_id == 3%>
+          <%= link_to "変更", edit_kid_path(kid.id), class: "btn_edit" %>
+          <%= link_to "削除", kid_path(kid.id), method: :delete, class: "btn_delete" %>
+        <% end %>
+
+      </div>
+
+      <div class="kid_list_bottom">
+
+        <div class="kid_list_birthday">
+        <%= kid.birth_date %>
+        </div>
+
+        <div class="kid_list_age_in_month">
+        <% set_age_in_month(kid) %>
+        <%= "#{age}歳#{age_in_month}か月" %>
+        </div>
+
+        <div class="kid_list_user">
+        <%= kid.user.name %>
+        </div>
+
+
+      </div>
+
+    </li>
+  <% end %>
+  </ul>
+
+    <br/>
+
+  <% if current_user.authority_id == 3%>
+    <%= link_to '園児を新しく登録する', new_kid_path %>
+  <% end %>
+
+</div>

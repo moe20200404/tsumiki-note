@@ -1,0 +1,23 @@
+  <div class="kid_class_lists">
+
+    <%= form_with(model: @grade, local: true, class:'new_grade' ) do |f| %>
+
+      <div class="grade_field">
+        <%= f.label :age %>
+        <%= f.text_field :age, autofocus: true %>才児クラス
+      </div>
+
+      <div class="grade_field">
+        <%= f.label :name %>
+        <%= f.text_field :name %>組さん
+      </div>
+
+      <div class="grade_field">
+        <%= f.submit "登録する" , class:"btn" %>
+      </div>
+
+    <% end %>
+  </div>
+  <div class="back_link">
+    <%= link_to '戻る', grades_path, class:"back-btn"  %>
+  </div>

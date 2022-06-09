@@ -1,0 +1,39 @@
+.kid_list {
+  background-color: bisque;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+
+.kid_list_top{
+  justify-content: space-between;
+}
+.kid_list_bottom{
+  justify-content: space-between;
+}
+
+.kid_list_class,
+.kid_list_name,
+.kid_list_birthday,
+.kid_list_age_in_month,
+.kid_list_user {
+  display: inline-block;
+}
+
+.kid_list_class{
+  width: 200px;
+}
+
+.kid_list_name{
+  width: 400px;
+}
+
+.kid_list_birthday{
+  width: 200px;
+}
+
+.kid_list_age_in_month{
+  width: 400px;
+}
+.kid_list_user {
+  width: 200px;
+}
