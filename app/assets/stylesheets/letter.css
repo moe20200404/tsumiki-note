@@ -1,16 +1,16 @@
 .wrapper{
-  height: 80vh;
+  height: 75vh;
   background-size: cover;
   width: 80vw;
   margin: 0px auto;
   padding: 25px;
-  background-color: #FFFFDD;
+  background-color: #fffdf3;
   overflow: scroll;
 }
 
 
 .important_letters{
-  height: 40vh;
+  height: 35vh;
   width: 70vw;
   list-style: none;
   margin: 0 auto;
@@ -23,7 +23,7 @@
 }
 
 .month_letters{
-  height: 40vh ;
+  height: 35vh ;
   width: 30vw;
   list-style: none;
   margin: 0 auto;

@@ -1,0 +1,12 @@
+  <div class="grade_lists">
+    <ul>
+    <% @grades.each do |grade| %>
+      <li>
+        <div class="grade_list_age"><%= grade.age %>才児クラス</div>
+        <div class="grade_list_name"><%= grade.name %>組さん</div>
+        <%= link_to "変更", edit_grade_path(grade.id), class: "btn_edit" %>
+        <%= link_to "削除", grade_path(grade.id), method: :delete, class: "btn_delete" %>
+      </li>
+    <% end %>
+    </ul>
+  </div>

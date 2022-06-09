@@ -1,5 +1,5 @@
-class UsersChild < ApplicationRecord
-  belongs_to :child_class
+class Kid < ApplicationRecord
+  belongs_to :grade
   belongs_to :user
 
 
@@ -11,7 +11,8 @@ class UsersChild < ApplicationRecord
     validates :birth_date
     validates :gender_id
     validates :start_month
-    validates :child_class
+    validates :grade
     validates :user
   end
+
 end

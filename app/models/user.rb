@@ -5,7 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :letters
-  has_many :children
+  has_many :kids
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :authority
