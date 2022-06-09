@@ -55,7 +55,7 @@ has_many :growths
 | inspection_date     | date      | null: false                    |
 | weight              | integer   | null: false                    |
 | height              | integer   | null: false                    |
-| child_id            | references| null: false                    |
+| kid_id              | references| null: false                    |
 
 ### Association
 belongs_to :kid

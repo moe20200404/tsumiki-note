@@ -2,7 +2,6 @@ class Kid < ApplicationRecord
   belongs_to :grade
   belongs_to :user
 
-
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender
 
@@ -14,5 +13,4 @@ class Kid < ApplicationRecord
     validates :grade
     validates :user
   end
-
 end

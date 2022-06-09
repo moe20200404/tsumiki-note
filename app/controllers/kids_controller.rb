@@ -33,14 +33,14 @@ class KidsController < ApplicationController
   def destroy
     @kid = Kid.find(params[:id])
     @kid.destroy
-    redirect_to action: "index"
+    redirect_to action: 'index'
   end
 
-private
+  private
 
   def set_kids
     case current_user.authority_id
-    when 2 , 4
+    when 2, 4
       @kids = Kid.where(user_id: current_user.id)
     when 3
       @kids = Kid.all
@@ -51,8 +51,7 @@ private
 
   def kid_params
     params.require(:kid).permit(
-      :name, :birth_date, :gender_id, :start_month,:end_month, :grade_id, :user_id
+      :name, :birth_date, :gender_id, :start_month, :end_month, :grade_id, :user_id
     )
   end
-
 end
