@@ -3,5 +3,11 @@ Rails.application.routes.draw do
   root to: "letters#index"
   resources :letters
   resources :grades, only: [:index, :new, :create, :destroy, :update, :edit]
-  resources :kids, only: [:index, :new, :create, :edit, :update, :destroy]
+  resources :kids do
+    resources :growths, only: [:index, :new, :create]
+  end
+  resources :growths do
+     collection {post :import}
+     collection {get :export}
+  end
 end

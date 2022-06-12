@@ -1,0 +1,31 @@
+.growth_lists {
+  margin-top: 3vh;
+  border-top: burlywood 3px solid;
+  padding-top: 3vh;
+
+}
+
+
+.growth_list {
+  background-color: bisque;
+  margin-bottom: 8px;
+  text-decoration: none;
+  display: flex;
+}
+
+.growth_list_inspection_date,
+.growth_list_weight,
+.growth_list_height{
+}
+
+.growth_list_inspection_date{
+  width: 200px;
+}
+
+.growth_list_weight {
+  width: 200px;
+}
+
+.growth_list_height{
+  width: 200px;
+}

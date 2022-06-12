@@ -1,6 +1,7 @@
 class Kid < ApplicationRecord
   belongs_to :grade
   belongs_to :user
+  has_many :growths
 
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :gender

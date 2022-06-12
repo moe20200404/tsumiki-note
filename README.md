@@ -53,8 +53,8 @@ has_many :growths
 |---------------------|-----------|--------------------------------|
 | month               | string    | null: false                    |
 | inspection_date     | date      | null: false                    |
-| weight              | integer   | null: false                    |
-| height              | integer   | null: false                    |
+| weight              | float	    | null: false                    |
+| height              | float	    | null: false                    |
 | kid_id              | references| null: false                    |
 
 ### Association

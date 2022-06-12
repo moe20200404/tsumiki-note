@@ -1,5 +1,5 @@
 class KidsController < ApplicationController
-  before_action :set_kids
+  before_action :set_kids, only: [:index]
 
   def index
   end
@@ -36,6 +36,11 @@ class KidsController < ApplicationController
     redirect_to action: 'index'
   end
 
+  def show
+    @kid = Kid.find(params[:id])
+    @growths = Growth.where(kid_id: params[:id]).order(month: :desc)
+  end
+
   private
 
   def set_kids
@@ -43,7 +48,7 @@ class KidsController < ApplicationController
     when 2, 4
       @kids = Kid.where(user_id: current_user.id)
     when 3
-      @kids = Kid.all
+      @kids = Kid.order(birth_date: :desc)
     else
       redirect_to root_path
     end

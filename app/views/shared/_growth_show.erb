@@ -1,0 +1,19 @@
+  <ul class="growth_lists">
+    <% growths.each do |growth| %>
+    <li class="growth_list">
+
+      <div class="growth_list_inspection_date">
+        <%= growth.inspection_date %>
+      </div>
+
+      <div class="growth_list_weight">
+        <%= growth.weight %> kg
+      </div>
+
+      <div class="growth_list_height">
+        <%= growth.height %> cm
+      </div>
+
+    </li>
+    <%end%>
+  </ul>

@@ -1,8 +1,8 @@
 module KidsHelper
   attr_accessor :age, :age_in_month
 
-  # 年齢と月齢をセットする
-  def set_age_in_month(kid)
+  # 年齢と月齢を設定する
+  def cal_age_in_month(kid)
     reference_date = Date.today
 
     today_m = reference_date.year * 12 + reference_date.month
