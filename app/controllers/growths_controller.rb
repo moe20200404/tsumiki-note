@@ -30,8 +30,12 @@ class GrowthsController < ApplicationController
   end
 
   def import
-    Growth.import(params[:file])
-    redirect_to action: 'index'
+    if params[:file].content_type.include?("text/csv")
+      Growth.import(params[:file])
+      redirect_to action: 'index'
+    else
+      redirect_to action: 'index'
+    end
   end
 
   private

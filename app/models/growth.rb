@@ -21,7 +21,10 @@ class Growth < ApplicationRecord
 
     CSV.foreach(file.path, headers: column_names) do |row|
       growth = Growth.new(row.to_hash.slice(*slice_column))
-      growth.save
+      if growth.valid?
+        puts growth.valid?
+        growth.save
+      end
     end
   end
 end
