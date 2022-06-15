@@ -8,6 +8,5 @@ FactoryBot.define do
 
     association :grade
     association :user
-
   end
 end
