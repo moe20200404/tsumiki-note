@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :letter do
     title                  { Faker::Name.initials(number: 2) }
     genre_id               { Faker::Number.between(from: 2, to: 4) }
-    association :user 
+    association :user
 
     after(:build) do |letter|
       letter.pdf_file.attach(
@@ -10,6 +10,5 @@ FactoryBot.define do
         filename: 'pdf_file.pdf'
       )
     end
-    
   end
 end

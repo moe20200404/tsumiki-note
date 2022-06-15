@@ -1,7 +1,7 @@
 class GradesController < ApplicationController
   before_action :authenticate_user!
   before_action :nursery_user!
-  before_action :set_grades, only:[:index, :new, :create, :edit, :update]
+  before_action :set_grades, only: [:index, :new, :create, :edit, :update]
 
   def index
   end
@@ -9,7 +9,7 @@ class GradesController < ApplicationController
   def new
     @grade = Grade.new
   end
-  
+
   def create
     @grade = Grade.new(grade_params)
     if @grade.save
@@ -41,9 +41,7 @@ class GradesController < ApplicationController
   private
 
   def nursery_user!
-    if !current_user.authority_id == 3
-      redirect_to root_path
-    end
+    redirect_to root_path if !current_user.authority_id == 3
   end
 
   def grade_params
@@ -51,6 +49,6 @@ class GradesController < ApplicationController
   end
 
   def set_grades
-    @grades = Grade.order(age: "ASC")
+    @grades = Grade.order(age: 'ASC')
   end
 end

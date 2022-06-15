@@ -1,0 +1,40 @@
+    <li class="kid_list">
+
+      <div class="kid_list_top">
+
+
+        <div class="kid_list_class">
+        <%= kid.grade.name %>組さん
+        (<%= kid.grade.age %>歳児クラス)
+        </div>
+
+        <%= link_to(kid_path(kid.id)) do %>
+        <div class="kid_list_name">
+        <%= kid.name %>
+        </div>
+        <%end%>
+
+        <% if current_user.authority_id == 3%>
+          <%= link_to "変更", edit_kid_path(kid.id), class: "btn_edit" %>
+          <%= link_to "削除", kid_path(kid.id), method: :delete, class: "btn_delete" %>
+        <% end %>
+
+      </div>
+
+      <div class="kid_list_bottom">
+
+        <div class="kid_list_birthday">
+        <%= kid.birth_date %>
+        </div>
+
+        <div class="kid_list_age_in_month">
+        <% cal_age_in_month(kid) %>
+        <%= "#{age}歳#{age_in_month}か月" %>
+        </div>
+
+        <div class="kid_list_user">
+        <%= kid.user.name %>
+        </div>
+
+
+      </div>
