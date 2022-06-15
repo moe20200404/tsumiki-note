@@ -107,6 +107,3 @@ end
 
 
 Kid.import kids
-
-# 保護者1人目(name: dummy4)の子供に変更。兄弟の設定。
-Kid.find(29).update(user_id: 4)
