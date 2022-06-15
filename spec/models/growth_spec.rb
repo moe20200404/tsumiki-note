@@ -13,10 +13,10 @@ RSpec.describe Growth, type: :model do
         expect(@growth).to be_valid
       end
     end
-    
+
     context '成長記録が登録できないとき' do
       it '登録月情報がないとき、登録できない' do
-        @growth.month = ""
+        @growth.month = ''
         @growth.valid?
         expect(@growth.errors.full_messages).to include("Month can't be blank")
       end
@@ -33,12 +33,12 @@ RSpec.describe Growth, type: :model do
       it '体重情報が2以下のとき、登録できない' do
         @growth.weight = 2
         @growth.valid?
-        expect(@growth.errors.full_messages).to include("Weight 体重は2kgより大きい値を登録してください")
+        expect(@growth.errors.full_messages).to include('Weight 体重は2kgより大きい値を登録してください')
       end
       it '体重情報が30以上のとき、登録できない' do
         @growth.weight = 30
         @growth.valid?
-        expect(@growth.errors.full_messages).to include("Weight 体重は30kgより小さい値を登録してください")
+        expect(@growth.errors.full_messages).to include('Weight 体重は30kgより小さい値を登録してください')
       end
       it '身長情報がないとき、登録できない' do
         @growth.height = nil
@@ -48,18 +48,13 @@ RSpec.describe Growth, type: :model do
       it '身長情報が40以下のとき、登録できない' do
         @growth.height = 40
         @growth.valid?
-        expect(@growth.errors.full_messages).to include("Height 身長は40cmより大きい値を登録してください")
+        expect(@growth.errors.full_messages).to include('Height 身長は40cmより大きい値を登録してください')
       end
       it '身長情報が200以上のとき、登録できない' do
         @growth.height = 200
         @growth.valid?
-        expect(@growth.errors.full_messages).to include("Height 身長は200cmより小さい値を登録してください")
+        expect(@growth.errors.full_messages).to include('Height 身長は200cmより小さい値を登録してください')
       end
     end
   end
 end
-
-=begin
-
-
-=end
