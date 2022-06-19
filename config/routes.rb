@@ -10,4 +10,7 @@ Rails.application.routes.draw do
      collection {post :import}
      collection {get :export}
   end
+  resources :users, only: [:index, :update] do
+    collection {post :admit}
+  end
 end
