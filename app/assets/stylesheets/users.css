@@ -1,0 +1,29 @@
+.user_lists{
+  list-style: none;
+}
+
+.user_list{
+  background-color: bisque;
+  margin-bottom: 8px;
+}
+
+.user_list_id,
+.user_list_name,
+.user_list_email,
+.user_list_authority,
+.user_list_permission,
+.user_list_address,
+.user_list_phone_number{
+  display: inline-block;
+}
+
+.btn_permit{
+  background: orange;
+  margin-left: 8px;
+  padding: 3px;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  color: #333;
+}

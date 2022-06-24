@@ -5,5 +5,9 @@
       <%= link_to 'クラス確認', grades_path, class: "menu-list" %>
       <%= link_to '園児確認', kids_path, class: "menu-list" %>
       <%= link_to '身体測定データ登録', growths_path, class: "menu-list"%>
+      <%= link_to 'ユーザー確認', users_path,class: "menu-list" %>
+      <% if @check == false %>
+      <p>未許可のユーザーがいます</p>
+      <%end%>
     </div>
   <% end %>

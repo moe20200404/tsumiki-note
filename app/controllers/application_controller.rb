@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   before_action :basic_auth
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :admit_check
 
   private
 
@@ -24,5 +25,14 @@ class ApplicationController < ActionController::Base
         :phone_number
       ]
     )
+  end
+
+  def admit_check
+    @check = User.find_by(permission: false)
+    if @check.present?
+      @check = false
+    else
+      @check = true
+    end
   end
 end
