@@ -1,6 +1,7 @@
 .kid_list {
   background-color: bisque;
   margin-bottom: 8px;
+  list-style: none;
 }
 
 .kid_list_top{

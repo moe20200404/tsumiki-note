@@ -40,9 +40,11 @@
         <%= user.id %>
       </div>
 
+      <%= link_to user_path(id: user.id) do %>
       <div class="user_list_name">
         <%= user.name %>
       </div>
+      <% end %>
       
       <div class="user_list_email">
         <%= user.email %>

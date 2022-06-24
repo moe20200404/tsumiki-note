@@ -1,9 +1,11 @@
 .user_lists{
+  list-style: none;
+}
+
+.user_list{
   background-color: bisque;
   margin-bottom: 8px;
 }
-
-.user_list{}
 
 .user_list_id,
 .user_list_name,

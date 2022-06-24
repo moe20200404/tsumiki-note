@@ -1,3 +1,5 @@
+<%= render partial: "shared/nursery_menu.erb" %>
+
 <div class="wrapper">
 
   <ul class="user_lists">
@@ -55,5 +57,12 @@
       </div>
     </li>
 
-    <% end %>
   </ul>
+
+  <% @kids.each do |kid| %>
+
+  <%= render partial: "shared/kid_show.erb",locals: {kid: kid}  %>
+
+  <% end%>
+
+</div>
