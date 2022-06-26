@@ -1,13 +1,9 @@
-* {
-  box-sizing: border-box;
-}
-
 .top-page-header {
   width: 100vw;
   height: 15vh;
   padding: 2vh 10vw;
   display: flex;
-  background-color: lemonchiffon;
+  background-color: transparent;
 }
 
 .logo-contents {
@@ -25,31 +21,40 @@
 .nav {
   font-size: 18px;
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   flex-wrap: wrap;
   width: 100%;
-  padding: 1vh 0;
+  padding-top:  3px;
 }
 
 .lists-right {
   display: flex;
-  list-style: none;
-  align-items: flex-end;
+  align-items: center;
   text-decoration: none;
-  line-height: 32px;
+  }
+
+.list-right{
+  padding: 10px;
+  margin: auto;
+  border: 1px solid lemonchiffon;
+  border-radius: 10px;
+  margin-left: 5px;
 }
 
-.menu-list {
-  text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
-}
-
+.menu-list,
 .user-name,
 .logout,
 .login,
 .sign-up {
   text-decoration: none;
-  margin-right: 3vw;
-  color: #333333;
+  color: #333;
+}
+
+
+.menu-list:hover,
+.user-name:hover,
+.logout:hover,
+.login:hover,
+.sign-up:hover{
+  color: #666;
 }

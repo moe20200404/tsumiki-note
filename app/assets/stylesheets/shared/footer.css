@@ -1,12 +1,8 @@
-* {
-  box-sizing: border-box;
-}
-
 .footer {
   height: 10vh;
   text-align: center;
   padding: 5vh;
-  background-color: lemonchiffon;
+  background-color: transparent;
 }
 
 .copyright {
