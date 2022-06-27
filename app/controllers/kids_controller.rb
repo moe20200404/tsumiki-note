@@ -1,4 +1,5 @@
 class KidsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_kids, only: [:index]
 
   def index

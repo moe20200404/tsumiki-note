@@ -1,4 +1,5 @@
 class GrowthsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_kid, only: [:new]
   def index
     @kids = Kid.all
