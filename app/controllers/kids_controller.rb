@@ -1,5 +1,6 @@
 class KidsController < ApplicationController
   before_action :authenticate_user!
+  before_action :nursery_user!, except: [:index, :show]
   before_action :set_kids, only: [:index]
 
   def index
@@ -38,11 +39,24 @@ class KidsController < ApplicationController
   end
 
   def show
-    @kid = Kid.find(params[:id])
-    @growths = Growth.where(kid_id: params[:id]).order(month: :desc)
+    if nursery_user?
+      @kid = Kid.find(params[:id])
+      @growths = Growth.where(kid_id: params[:id]).order(month: :desc)
+    else
+      redirect_to user_path(id: current_user.id)
+    end
   end
 
   private
+
+  def nursery_user!
+    redirect_to root_path if current_user.authority_id != 3
+  end
+
+
+  def nursery_user?
+    current_user.authority_id == 3
+  end
 
   def set_kids
     case current_user.authority_id

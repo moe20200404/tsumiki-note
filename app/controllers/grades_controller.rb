@@ -41,7 +41,7 @@ class GradesController < ApplicationController
   private
 
   def nursery_user!
-    redirect_to root_path if !current_user.authority_id == 3
+    redirect_to root_path if current_user.authority_id != 3
   end
 
   def grade_params

@@ -5,8 +5,15 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
-    @kids = Kid.where(user_id: params[:id])
+    if nursery_user?
+      @user = User.find(params[:id])
+      @kids = Kid.where(user_id: params[:id])
+    elsif params[:id] != "#{current_user.id}"
+      redirect_to root_path
+    else
+      @user = User.find(current_user.id)
+      @kids = Kid.where(user_id: current_user.id)
+    end
   end
 
   def update
@@ -25,14 +32,17 @@ class UsersController < ApplicationController
 
   private
 
+
+  def nursery_user?
+    current_user.authority_id == 3
+  end
+
   def user_set
     case current_user.authority_id
     when 2, 4
       @users = User.where(id: current_user.id)
-      @kids = Kid.where(user_id: current_user.id)
     when 3
       @users = User.order(:authority_id, id: :desc)
-      @kids = Kid.order(birth_date: :desc)
     else
       redirect_to root_path
     end
