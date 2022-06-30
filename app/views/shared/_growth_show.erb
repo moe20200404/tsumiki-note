@@ -14,6 +14,11 @@
         <%= growth.height %> cm
       </div>
 
+
+      <% if current_user.authority_id == 3%>
+        <%= link_to "変更", edit_kid_growth_path(kid_id: growth.kid_id, id: growth.id), class: "btn_edit" %>
+      <% end %>
+
     </li>
     <%end%>
   </ul>

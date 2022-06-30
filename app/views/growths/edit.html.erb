@@ -1,0 +1,9 @@
+<div class="wrapper">
+
+  <%= render 'shared/error_messages', resource: @growth %>
+
+  <h2>身体測定データ編集</h2>
+
+  <%= render partial: "shared/growth_form", locals:{ growth: @growth}  %>
+
+</div>

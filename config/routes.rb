@@ -2,9 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "letters#index"
   resources :letters
-  resources :grades, only: [:index, :new, :create, :update, :edit]
+  resources :grades, only: [:index, :new, :create, :edit, :update]
   resources :kids,except:[:destroy] do
-    resources :growths, only: [:index, :new, :create]
+    resources :growths, only: [:index, :new, :create, :edit, :update]
   end
   resources :growths do
      collection {post :import}
