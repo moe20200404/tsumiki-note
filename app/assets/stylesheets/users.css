@@ -27,3 +27,14 @@
   font-weight: bold;
   color: #333;
 }
+
+.wrapper_login,
+.wrapper_sign_up {
+  height: 75vh;
+  background-size: cover;
+  width: 50vw;
+  margin: 0px auto;
+  padding: 25px;
+  background-color: white;
+  overflow: scroll;
+}
