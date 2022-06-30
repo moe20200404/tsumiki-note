@@ -59,6 +59,10 @@
 
   </ul>
 
+  <% if !@kids.present? %>
+<p>あなたの子供は、まだ登録されていません。</p>
+<% end %>
+
   <% @kids.each do |kid| %>
 
   <%= render partial: "shared/kid_show.erb",locals: {kid: kid}  %>

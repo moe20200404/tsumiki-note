@@ -32,11 +32,6 @@ class GradesController < ApplicationController
     end
   end
 
-  def destroy
-    @grade = Grade.find(params[:id])
-    @grade.destroy
-    redirect_to action: 'index'
-  end
 
   private
 

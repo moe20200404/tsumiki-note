@@ -4,6 +4,7 @@
   padding: 2vh 10vw;
   display: flex;
   background-color: transparent;
+  border-bottom: #ddd solid 1px;
 }
 
 .logo-contents {
