@@ -5,7 +5,7 @@
         <%= @kid.name %>
       </div>
 
-    <%= form_with(model: [@kid, @growth], local: true, class:'new_growth' ) do |f| %>
+    <%= form_with(model: @growth, local: true, class:'new_growth' ) do |f| %>
 
       <div class="growth_field">
         <%= f.label(:month, "測定月：") %>

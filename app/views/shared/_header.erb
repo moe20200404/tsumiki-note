@@ -4,15 +4,14 @@
   </div>
   <div class='nav'>
     <ul class='lists-right'>
-      <li><%= link_to 'おたより', root_path, class: "menu-list" %></li>
-      <li><%= link_to '成長記録', kids_path, class: "menu-list" %></li>
-
       <% if user_signed_in? %>
-        <li><%= link_to current_user.name, user_path(id: current_user.id), class: "user-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <li class='list-right'><%= link_to 'おたより', root_path, class: "menu-list" %></li>
+        <li class='list-right'><%= link_to '成長記録', user_path(id: current_user.id), class: "menu-list" %></li>
+        <li class='list-right'><%= link_to current_user.name, user_path(id: current_user.id), class: "user-name" %></li>
+        <li class='list-right'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
       <% else %>
-        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+        <li class='list-right'><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li class='list-right'><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
       <% end %>
     </ul>
   </div>

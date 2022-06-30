@@ -32,16 +32,11 @@ class GradesController < ApplicationController
     end
   end
 
-  def destroy
-    @grade = Grade.find(params[:id])
-    @grade.destroy
-    redirect_to action: 'index'
-  end
 
   private
 
   def nursery_user!
-    redirect_to root_path if !current_user.authority_id == 3
+    redirect_to root_path if current_user.authority_id != 3
   end
 
   def grade_params

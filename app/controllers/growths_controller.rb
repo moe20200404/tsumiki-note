@@ -1,4 +1,6 @@
 class GrowthsController < ApplicationController
+  before_action :authenticate_user!
+  before_action :nursery_user!
   before_action :set_kid, only: [:new]
   def index
     @kids = Kid.all
@@ -34,7 +36,26 @@ class GrowthsController < ApplicationController
     redirect_to action: 'index'
   end
 
+
+  def edit
+    @kid = Kid.find(params[:kid_id])
+    @growth = Growth.find(params[:id])
+  end
+
+  def update
+    @growth = Growth.find(params[:id])
+    if @growth.update(growth_params)
+      redirect_to action: 'index'
+    else
+      render :edit
+    end
+  end
+
+
   private
+  def nursery_user!
+    redirect_to root_path if current_user.authority_id != 3
+  end
 
   def set_kid
     @kid = Kid.find(params[:kid_id])
