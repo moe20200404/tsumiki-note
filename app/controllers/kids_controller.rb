@@ -7,7 +7,7 @@ class KidsController < ApplicationController
   end
 
   def new
-    @kid = Kid.new
+    @kid = Kid.new(start_month: Date.today.next_month(1).strftime('%Y年%m月').to_s)
   end
 
   def create

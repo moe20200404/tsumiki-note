@@ -16,24 +16,25 @@
 .kid_list_birthday,
 .kid_list_age_in_month,
 .kid_list_user {
+  width: 100%;
   display: inline-block;
 }
 
 .kid_list_class{
-  width: 200px;
+  /* width: 200px; */
 }
 
 .kid_list_name{
-  width: 400px;
+  /* width: 400px; */
 }
 
 .kid_list_birthday{
-  width: 200px;
+  /* width: 200px; */
 }
 
 .kid_list_age_in_month{
-  width: 400px;
+  /* width: 400px; */
 }
 .kid_list_user {
-  width: 200px;
+  /* width: 200px; */
 }

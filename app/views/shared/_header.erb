@@ -5,13 +5,31 @@
   <div class='nav'>
     <ul class='lists-right'>
       <% if user_signed_in? %>
-        <li class='list-right'><%= link_to 'おたより', root_path, class: "menu-list" %></li>
-        <li class='list-right'><%= link_to '成長記録', user_path(id: current_user.id), class: "menu-list" %></li>
-        <li class='list-right'><%= link_to current_user.name, user_path(id: current_user.id), class: "user-name" %></li>
-        <li class='list-right'><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <%= link_to(root_path, class: "menu-list") do %>
+        <li class='list-right'>おたより</li>
+        <% end %>
+
+        <%= link_to(user_path(id: current_user.id), class: "menu-list") do %>
+        <li class='list-right'>成長記録</li>
+        <% end %>
+
+        <%= link_to(user_path(id: current_user.id), class: "user-name") do %>
+        <li class='list-right'><%= current_user.name %></li>
+        <% end %>
+
+        <%= link_to(destroy_user_session_path, method: :delete, class: "logout") do %>
+        <li class='list-right'>ログアウト</li>
+        <% end %>
+
       <% else %>
-        <li class='list-right'><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
-        <li class='list-right'><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      
+        <%= link_to(new_user_session_path, class: "login") do %>
+        <li class='list-right'>ログイン</li>
+        <% end %>
+
+        <%= link_to(new_user_registration_path, class: "sign-up") do %>
+        <li class='list-right'>新規登録</li>
+        <% end %>
       <% end %>
     </ul>
   </div>

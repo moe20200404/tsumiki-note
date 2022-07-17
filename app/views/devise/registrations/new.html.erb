@@ -33,8 +33,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :postal_code, "郵便番号" %><br />
-    <%= f.text_field :postal_code, id: "postal_code", class: "input_field" %>
+    <%= f.label :postal_code, "郵便番号(ハイフンなし)" %><br />
+    <%= f.text_field :postal_code, id: "postal_code",placeholder: "0000000", class: "input_field" %>
       <div class>
         <input type="button" value="住所検索" id=search_btn class="search_btn">
       </div>

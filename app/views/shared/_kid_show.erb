@@ -2,38 +2,43 @@
 
       <div class="kid_list_top">
 
+        <% if current_user.authority_id == 3%>
+          <%= link_to "変更", edit_kid_path(kid.id), class: "btn_edit" %></ br>
+        <% end %>
+
 
         <div class="kid_list_class">
-        <%= kid.grade.name %>組さん
+        クラス：　<%= kid.grade.name %>組さん
         (<%= kid.grade.age %>歳児クラス)
         </div>
 
         <%= link_to(kid_path(kid.id)) do %>
         <div class="kid_list_name">
-        <%= kid.name %>
+        名　前：　<%= kid.name %>
         </div>
         <%end%>
-
-        <% if current_user.authority_id == 3%>
-          <%= link_to "変更", edit_kid_path(kid.id), class: "btn_edit" %>
-        <% end %>
 
       </div>
 
       <div class="kid_list_bottom">
 
         <div class="kid_list_birthday">
-        <%= kid.birth_date %>
+        誕生日：　<%= kid.birth_date %>
         </div>
 
         <div class="kid_list_age_in_month">
         <% cal_age_in_month(kid) %>
-        <%= "#{age}歳#{age_in_month}か月" %>
+        月　齢：　<%= "#{age}歳#{age_in_month}か月" %>
         </div>
 
         <div class="kid_list_user">
-        <%= kid.user.name %>
+        保護者：　<%= kid.user.name %>
         </div>
 
+        <div class="kid_list_start_month">
+        入園月：　<%= kid.start_month %>
+        <% if kid.end_month.present? %>
+        </ br>退園月：　<%= kid.end_month %>
+        <% end %>
 
       </div>

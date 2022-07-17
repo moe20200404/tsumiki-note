@@ -24,17 +24,17 @@
       </div>
 
       <div class="kid_field">
-        入園月を入力して下さい。yyyy年mm月→ yyyymm<br/>
+        入園月を入力して下さい。<br/>
         <%= f.label :start_month %>
-        <%= f.text_field :start_month ,placeholder: "yyyymm" %>
+        <%= f.text_field :start_month ,placeholder: "yyyy年mm月" %>
       </div>
 
       <% if params[:action]=="edit" %>
 
       <div class="kid_field">
-        退園月を入力して下さい。yyyy年mm月→ yyyymm<br/>
+        退園月を入力して下さい。<br/>
         <%= f.label :end_month %>
-        <%= f.text_field :end_month ,placeholder: "yyyymm" %>
+        <%= f.text_field :end_month ,placeholder: "yyyy年mm月" %>
       </div>
 
       <% end %>

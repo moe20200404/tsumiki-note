@@ -20,7 +20,6 @@
 }
 
 .nav {
-  font-size: 18px;
   display: flex;
   justify-content: flex-end;
   flex-wrap: wrap;
@@ -32,12 +31,15 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  }
+}
 
 .list-right{
-  padding: 10px;
+  width: 8vw;
+  height: 8vh;
+  font-size: 10px;
+  padding: 5px;
   margin: auto;
-  border: 1px solid lemonchiffon;
+  background-color: lemonchiffon;
   border-radius: 10px;
   margin-left: 5px;
 }
@@ -49,6 +51,8 @@
 .sign-up {
   text-decoration: none;
   color: #333;
+  text-align: center;
+  justify-content: center;
 }
 
 
@@ -57,5 +61,5 @@
 .logout:hover,
 .login:hover,
 .sign-up:hover{
-  color: #666;
+  color: #888;
 }
