@@ -2,37 +2,8 @@
 
 <div class="wrapper">
   <ul class="kid_lists">
-    <%# 項目表示 %>
-    <li class="kid_list">
-      <div class="kid_list_top">
-          <div class="kid_list_class">
-            クラス名
-          </div>
-
-
-          <div class="kid_list_name">
-            名前
-          </div>
-      </div>
-
-      <div class="kid_list_bottom">
-          <div class="kid_list_birthday">
-            誕生日
-          </div>
-          <div class="kid_list_age_in_month">
-            月齢
-          </div>
-
-          <div class="kid_list_user">
-            保護者名
-          </div>
-
-        </div>
-        </li>
-
-
-<%= render partial: "shared/kid_show.erb",locals: {kid: @kid}  %>
-</ul>
+  <%= render partial: "shared/kid_show.erb",locals: {kid: @kid}  %>
+  </ul>
 
 <%= render partial: "shared/growth_show.erb",locals: {growths: @growths} %>
 
