@@ -7,7 +7,7 @@ r = Random.new
 10.times do |i|
   kids << Kid.new(
     name: "大江　園児#{i+1}",
-    gender_id: "#{rand(1..2)}",
+    gender_id: "#{rand(2..3)}",
     start_month: "202204",
     end_month: nil,
     grade_id: 1,
@@ -20,7 +20,7 @@ end
 10.times do |i|
   kids << Kid.new(
     name: "大江　園児#{i+11}",
-    gender_id: "#{rand(1..2)}",
+    gender_id: "#{rand(2..3)}",
     start_month: "202104",
     end_month: nil,
     grade_id: 2,
@@ -33,7 +33,7 @@ end
 5.times do |i|
   kids << Kid.new(
     name: "大江　園児#{i+21}",
-    gender_id: "#{rand(1..2)}",
+    gender_id: "#{rand(2..3)}",
     start_month: "202004",
     end_month: nil,
     grade_id: 3,
@@ -46,7 +46,7 @@ end
 5.times do |i|
   kids << Kid.new(
     name: "大江　園児#{i+26}",
-    gender_id: "#{rand(1..2)}",
+    gender_id: "#{rand(2..3)}",
     start_month: "202004",
     end_month: nil,
     grade_id: 4,

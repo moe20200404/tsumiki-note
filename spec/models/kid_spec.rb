@@ -28,7 +28,7 @@ RSpec.describe Kid, type: :model do
         expect(@kid.errors.full_messages).to include("Birth date can't be blank")
       end
       it '性別の入力がないと登録できない' do
-        @kid.gender_id = '--'
+        @kid.gender_id = 1
         @kid.valid?
         expect(@kid.errors.full_messages).to include("Gender can't be blank")
       end
