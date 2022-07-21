@@ -29,10 +29,10 @@ class ApplicationController < ActionController::Base
 
   def admit_check
     @check = User.find_by(permission: false)
-    if @check.present?
-      @check = false
-    else
-      @check = true
-    end
+    @check = if @check.present?
+               false
+             else
+               true
+             end
   end
 end

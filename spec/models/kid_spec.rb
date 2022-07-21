@@ -40,7 +40,7 @@ RSpec.describe Kid, type: :model do
       it '入園月のフォームが正しくないと登録できない' do
         @kid.start_month = '202204'
         @kid.valid?
-        expect(@kid.errors.full_messages).to include("Start month input correctly")
+        expect(@kid.errors.full_messages).to include('Start month input correctly')
       end
       it 'クラス情報がないと登録できない' do
         @kid.grade = nil

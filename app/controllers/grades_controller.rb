@@ -32,7 +32,6 @@ class GradesController < ApplicationController
     end
   end
 
-
   private
 
   def nursery_user!

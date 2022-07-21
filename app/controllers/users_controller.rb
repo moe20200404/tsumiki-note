@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if nursery_user?
       @user = User.find(params[:id])
       @kids = Kid.where(user_id: params[:id])
-    elsif params[:id] != "#{current_user.id}"
+    elsif params[:id] != current_user.id.to_s
       redirect_to root_path
     else
       @user = User.find(current_user.id)
@@ -16,13 +16,11 @@ class UsersController < ApplicationController
     end
   end
 
-
   def update
     @user = User.find(params[:id])
     @user.update(user_params)
     redirect_to action: 'index'
   end
-
 
   def admit
     @user = User.find(params[:id])
@@ -32,7 +30,6 @@ class UsersController < ApplicationController
   end
 
   private
-
 
   def nursery_user?
     current_user.authority_id == 3
@@ -51,15 +48,15 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(
-        :name,
-        :authority_id,
-        :postal_code,
-        :pref,
-        :city,
-        :town,
-        :building,
-        :phone_number,
-        :permission
+      :name,
+      :authority_id,
+      :postal_code,
+      :pref,
+      :city,
+      :town,
+      :building,
+      :phone_number,
+      :permission
     )
   end
 end

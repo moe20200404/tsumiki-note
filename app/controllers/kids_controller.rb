@@ -55,7 +55,6 @@ class KidsController < ApplicationController
     redirect_to root_path if current_user.authority_id != 3
   end
 
-
   def nursery_user?
     current_user.authority_id == 3
   end
@@ -73,11 +72,7 @@ class KidsController < ApplicationController
 
   def users_kid?
     @kid = Kid.find(params[:id])
-    if @kid.user_id == current_user.id
-      true
-    else
-      false
-    end
+    @kid.user_id == current_user.id
   end
 
   def kid_params

@@ -3,7 +3,7 @@ class LettersController < ApplicationController
   before_action :nursery_user!, except: [:index, :show]
 
   def index
-    if current_user.permission 
+    if current_user.permission
       @important_letters = Letter.where(genre_id: 4).order(updated_at: :desc).limit(6)
       @monthly_letters = Letter.where(genre_id: 2).order(updated_at: :desc).limit(6)
       @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(6)
@@ -47,6 +47,7 @@ class LettersController < ApplicationController
   end
 
   private
+
   def nursery_user!
     redirect_to root_path if current_user.authority_id != 3
   end
