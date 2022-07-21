@@ -3,12 +3,11 @@
     <%= form_with(model: @kid, local: true, class:'new_kid' ) do |f| %>
 
       <div class="kid_field">
-        名前を入力してください
-        <%= f.label :name %>
+        <%= f.label(:name, "名前") %><br/>
         <%= f.text_field :name, autofocus: true %>
       </div>
 
-      <div class="kid_field">
+      <div class="kid-date-field">
          <label class="form-text">生年月日</label>
          <%= raw sprintf(
                      f.date_select(
@@ -20,34 +19,30 @@
                        start_year: (Time.now.year - 10),
                        end_year: (Time.now.year ),
                        date_separator: '%s'),
-                     "<p> 年 </p>", "<p> 月 </p>") + "<p> 日 </p>" %>
+                     "<p class:'date-field'> 年 </p>", "<p class:'date-field'> 月 </p>") + "<p class:'date-field'> 日 </p>" %>
       </div>
 
       <div class="kid_field">
-        入園月を入力して下さい。<br/>
-        <%= f.label :start_month %>
+        <%= f.label(:start_month, "入園月を入力して下さい。") %><br />
         <%= f.text_field :start_month ,placeholder: "yyyy年mm月" %>
       </div>
 
       <% if params[:action]=="edit" %>
 
       <div class="kid_field">
-        退園月を入力して下さい。<br/>
-        <%= f.label :end_month %>
+        <%= f.label(:end_month, "退園月を入力してください") %><br/>
         <%= f.text_field :end_month ,placeholder: "yyyy年mm月" %>
       </div>
 
       <% end %>
 
       <div class="kid_field">
-        性別を選んで下さい<br/>
-        <%= f.label :gender_id %>
+        <%= f.label(:gender_id, "性別") %>
         <%= f.collection_select(:gender_id, Gender.all, :id, :name, {}, {class:"select-box", id:"gender-category"}) %>
       </div>
 
       <div class="kid_field">
-        クラスを選んで下さい
-        <%= f.label(:grade_id, "クラスを選んで下さい") %>
+        <%= f.label(:grade_id, "クラス") %>
         <%= f.collection_select(:grade_id, Grade.all, :id, :name, {}, {class:"select-box", id:"choice_class"}) %>
       </div>
 
@@ -63,5 +58,5 @@
     <% end %>
   </div>
   <div class="back_link">
-    <%= link_to '戻る', grades_path, class:"back-btn"  %>
+    <%= link_to '戻る', kids_path, class:"back-btn"  %>
   </div>

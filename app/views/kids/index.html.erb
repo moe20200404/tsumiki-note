@@ -1,6 +1,9 @@
 <%= render partial: "shared/nursery_menu.erb" %>
 
 <div class="wrapper">
+  <% if current_user.authority_id == 3%>
+    <%= link_to '園児を新しく登録する', new_kid_path %>
+  <% end %>
  
   <ul class="kid_lists">
     <% @kids.each do |kid| %>

@@ -14,7 +14,7 @@
 .user_list_permission,
 .user_list_address,
 .user_list_phone_number{
-  display: inline-block;
+  display: block;
 }
 
 .btn_permit{

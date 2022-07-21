@@ -3,74 +3,9 @@
 <div class="wrapper">
 
   <ul class="user_lists">
-    <li class="user_list">
-      <div class="user_list_id">
-        ユーザーID
-      </div>
-
-      <div class="user_list_name">
-        名前
-      </div>
-      
-      <div class="user_list_email">
-        E-mail
-      </div>
-      
-      <div class="user_list_authority">
-        権限
-      </div>
-      
-      <div class="user_list_permission">
-        許可
-      </div>
-      
-      <div class="user_list_address">
-        住所
-      </div>
-      
-      <div class="user_list_phone_number">
-        電話番号
-      </div>
-    </li>
-
     <% @users.each do |user| %>
 
-    <li class="user_list">
-      <div class="user_list_id">
-        <%= user.id %>
-      </div>
-
-      <%= link_to user_path(id: user.id) do %>
-      <div class="user_list_name">
-        <%= user.name %>
-      </div>
-      <% end %>
-      
-      <div class="user_list_email">
-        <%= user.email %>
-      </div>
-      
-      <div class="user_list_authority">
-        <%= Authority.find(user.authority_id).name %>
-      </div>
-      
-      <div class="user_list_permission">
-        <% if user.permission == false %>
-
-        <%= link_to '許可する', admit_users_path(id: user.id),method: :post,class:"btn_permit" %>
-
-        <% end %>
-      </div>
-      
-      <div class="user_list_address">
-        〒<%= user.postal_code %><br />
-        <%= user.pref %><%= user.city %><%= user.town %><%= user.building %>
-      </div>
-      
-      <div class="user_list_phone_number">
-        <%= user.phone_number %>
-      </div>
-    </li>
+      <%= render partial: "shared/user_show.erb",locals: {user: user}  %>
 
     <% end %>
   </ul>

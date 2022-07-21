@@ -41,9 +41,9 @@ class KidsController < ApplicationController
   def show
     if nursery_user?
       @kid = Kid.find(params[:id])
-      @growths = Growth.where(kid_id: params[:id]).order(month: :desc)
+      @growths = Growth.where(kid_id: params[:id]).order(inspection_date: :desc)
     elsif users_kid?
-      @growths = Growth.where(kid_id: params[:id]).order(month: :desc)
+      @growths = Growth.where(kid_id: params[:id]).order(inspection_date: :desc)
     else
       redirect_to user_path(id: current_user.id)
     end

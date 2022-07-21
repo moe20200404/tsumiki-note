@@ -1,13 +1,13 @@
 class GrowthsController < ApplicationController
   before_action :authenticate_user!
   before_action :nursery_user!
-  before_action :set_kid, only: [:new]
   def index
     @kids = Kid.all
     @growths = Growth.where(month: Date.today.strftime('%Y%m').to_s)
   end
 
   def new
+    @kid = Kid.find(params[:kid_id])
     @growth = Growth.new(kid_id: params[:id], month: Date.today.strftime('%Y%m').to_s, inspection_date: Date.today)
   end
 
@@ -43,6 +43,7 @@ class GrowthsController < ApplicationController
   end
 
   def update
+    @kid = Kid.find(params[:kid_id])
     @growth = Growth.find(params[:id])
     if @growth.update(growth_params)
       redirect_to action: 'index'
@@ -55,10 +56,6 @@ class GrowthsController < ApplicationController
   private
   def nursery_user!
     redirect_to root_path if current_user.authority_id != 3
-  end
-
-  def set_kid
-    @kid = Kid.find(params[:kid_id])
   end
 
   def growth_params

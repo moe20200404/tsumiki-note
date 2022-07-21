@@ -20,21 +20,16 @@
   display: inline-block;
 }
 
-.kid_list_class{
-  /* width: 200px; */
+.kid_field{
+  margin-top: 15px;
 }
 
-.kid_list_name{
-  /* width: 400px; */
+.kid-date-field{
+  margin-top: 15px;
+  display: flex;
 }
 
-.kid_list_birthday{
-  /* width: 200px; */
-}
 
-.kid_list_age_in_month{
-  /* width: 400px; */
-}
-.kid_list_user {
-  /* width: 200px; */
+.date-field{
+  justify-content: flex-start;
 }

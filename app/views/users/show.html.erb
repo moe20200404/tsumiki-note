@@ -3,65 +3,18 @@
 <div class="wrapper">
 
   <ul class="user_lists">
-    <li class="user_list">
-      <div class="user_list_id">
-        ユーザーID
-      </div>
 
-      <div class="user_list_name">
-        名前
-      </div>
-      
-      <div class="user_list_email">
-        E-mail
-      </div>
-      
-      <div class="user_list_authority">
-        権限
-      </div>
-      
-      <div class="user_list_address">
-        住所
-      </div>
-      
-      <div class="user_list_phone_number">
-        電話番号
-      </div>
-    </li>
-
-    <li class="user_list">
-      <div class="user_list_id">
-        <%= @user.id %>
-      </div>
-
-      <div class="user_list_name">
-        <%= @user.name %>
-      </div>
-      
-      <div class="user_list_email">
-        <%= @user.email %>
-      </div>
-      
-      <div class="user_list_authority">
-        <%= Authority.find(@user.authority_id).name %>
-      </div>
-      
-
-      <div class="user_list_address">
-        〒<%= @user.postal_code %><br />
-        <%= @user.pref %><%= @user.city %><%= @user.town %><%= @user.building %>
-      </div>
-      
-      <div class="user_list_phone_number">
-        <%= @user.phone_number %>
-      </div>
-    </li>
+  <%= render partial: "shared/user_show.erb",locals: {user: @user}  %>
 
   </ul>
 
-  <% if !@kids.present? %>
-<p>あなたの子供は、まだ登録されていません。</p>
-<% end %>
+  <% if @kids.present? %>
+  <p>園児</p>
+
+  <% else %>
+  <p>あなたの子供は、まだ登録されていません。</p>
+  
+  <% end %>
 
   <% @kids.each do |kid| %>
 

@@ -19,13 +19,17 @@
 }
 
 .growth_list_inspection_date{
-  width: 200px;
+  width: 35%;
 }
 
 .growth_list_weight {
-  width: 200px;
+  width: 30%;
 }
 
 .growth_list_height{
-  width: 200px;
+  width: calc(30% - 15px);
+}
+
+.growth_field{
+  margin-top: 15px;
 }

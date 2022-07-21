@@ -2,10 +2,10 @@
 
       <div class="growth_field">
         名前を確認してください<br/>
-        <%= @kid.name %>
+        <%= kid.name %>
       </div>
 
-    <%= form_with(model: @growth, local: true, class:'new_growth' ) do |f| %>
+    <%= form_with(model: [@kid, @growth], local: true, class:'new_growth' ) do |f| %>
 
       <div class="growth_field">
         <%= f.label(:month, "測定月：") %>
@@ -34,5 +34,5 @@
     <% end %>
   </div>
   <div class="back_link">
-    <%= link_to '戻る', grades_path, class:"back-btn"  %>
+    <%= link_to '戻る', kid_path(id: @kid.id), class:"back-btn"  %>
   </div>

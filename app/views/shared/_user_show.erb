@@ -1,0 +1,32 @@
+    <li class="user_list">
+      <div class="user_list_permission">
+        <% if user.permission == false && current_user.authority_id == 3 %>
+
+        <%= link_to '許可する', admit_users_path(id: user.id),method: :post,class:"btn_permit" %>
+
+        <% end %>
+      </div>
+
+      <div class="user_list_name">
+        名前：　<%= user.name %><br/>
+      </div>
+      
+      <div class="user_list_email">
+        E-mail：　<%= user.email %><br/>
+      </div>
+      
+      <% if current_user.authority_id == 3 %>
+      <div class="user_list_authority">
+        権限：　<%= Authority.find(user.authority_id).name %><br/>
+      </div>
+      <% end %>
+
+      <div class="user_list_address">
+        住所：　〒<%= user.postal_code %>  
+        <%= user.pref %><%= user.city %><%= user.town %><%= user.building %>
+      </div>
+      
+      <div class="user_list_phone_number">
+        電話番号：　<%= user.phone_number %>
+      </div>
+    </li>

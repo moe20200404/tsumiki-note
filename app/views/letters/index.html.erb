@@ -16,7 +16,7 @@
     <%= link_to "すべての重要なお知らせを表示する。", letter_path(@important_letters[0][:genre_id]), class: "link" %>
 
   <% else %>
-    重要なお知らせは投稿されていません
+    表示できる重要なお知らせはありません
   <% end %>
   </div>
 
@@ -36,7 +36,7 @@
     <%= link_to "毎月のおたよりを表示する。", letter_path(@monthly_letters[0][:genre_id]), class: "link" %>
 
     <% else %>
-      毎月のおたよりは投稿されていません
+      表示できる毎月のおたよりはありません
     <% end %>
     </div>
 
@@ -54,7 +54,7 @@
       </lu>
     <%= link_to "すべての献立表を表示する。", letter_path(@menu_letters[0][:genre_id]), class: "link" %>
     <% else %>
-      毎月のおたよりは投稿されていません
+      表示できる献立表はありません
     <% end %>
 
     </div>

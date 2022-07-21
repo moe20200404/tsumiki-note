@@ -3,9 +3,11 @@ class LettersController < ApplicationController
   before_action :nursery_user!, except: [:index, :show]
 
   def index
-    @important_letters = Letter.where(genre_id: 4).order(updated_at: :desc).limit(6)
-    @monthly_letters = Letter.where(genre_id: 2).order(updated_at: :desc).limit(6)
-    @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(6)
+    if current_user.permission 
+      @important_letters = Letter.where(genre_id: 4).order(updated_at: :desc).limit(6)
+      @monthly_letters = Letter.where(genre_id: 2).order(updated_at: :desc).limit(6)
+      @menu_letters = Letter.where(genre_id: 3).order(updated_at: :desc).limit(6)
+    end
   end
 
   def show
