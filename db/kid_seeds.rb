@@ -8,7 +8,7 @@ r = Random.new
   kids << Kid.new(
     name: "大江　園児#{i+1}",
     gender_id: "#{rand(2..3)}",
-    start_month: "202204",
+    start_month: "2022年04月",
     end_month: nil,
     grade_id: 1,
     birth_date: "#{Date.jd(rand(2459307..2459671))}",
@@ -21,7 +21,7 @@ end
   kids << Kid.new(
     name: "大江　園児#{i+11}",
     gender_id: "#{rand(2..3)}",
-    start_month: "202104",
+    start_month: "2021年04月",
     end_month: nil,
     grade_id: 2,
     birth_date: "#{Date.jd(rand(2458942..2459306))}",
@@ -34,7 +34,7 @@ end
   kids << Kid.new(
     name: "大江　園児#{i+21}",
     gender_id: "#{rand(2..3)}",
-    start_month: "202004",
+    start_month: "2020年04月",
     end_month: nil,
     grade_id: 3,
     birth_date: "#{Date.jd(rand(2458576..2458941))}",
@@ -47,7 +47,7 @@ end
   kids << Kid.new(
     name: "大江　園児#{i+26}",
     gender_id: "#{rand(2..3)}",
-    start_month: "202004",
+    start_month: "2020年04月",
     end_month: nil,
     grade_id: 4,
     birth_date: "#{Date.jd(rand(2458211..2458575))}",

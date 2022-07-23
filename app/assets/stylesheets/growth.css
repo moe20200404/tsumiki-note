@@ -13,11 +13,6 @@
   display: flex;
 }
 
-.growth_list_inspection_date,
-.growth_list_weight,
-.growth_list_height{
-}
-
 .growth_list_inspection_date{
   width: 35%;
 }
