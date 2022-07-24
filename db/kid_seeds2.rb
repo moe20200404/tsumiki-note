@@ -18,7 +18,7 @@ end
 10.times do |i|
   Kid.create(
     name: "大江　園児#{i+11}",
-    gender_id: rand(2..3),
+    gender_id: "#{rand(2..3)}",
     start_month: "2021年04月",
     end_month: "",
     grade_id: 2,
@@ -31,7 +31,7 @@ end
 5.times do |i|
   Kid.create(
     name: "大江　園児#{i+21}",
-    gender_id: rand(2..3),
+    gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
     end_month: "",
     grade_id: 3,
@@ -44,7 +44,7 @@ end
 5.times do |i|
   Kid.create(
     name: "大江　園児#{i+26}",
-    gender_id: rand(2..3),
+    gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
     end_month: "",
     grade_id: 4,
