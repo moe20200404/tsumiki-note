@@ -54,8 +54,7 @@ https://docs.google.com/spreadsheets/d/1utKkaMtELSqeDT9rEE0uR7SxQaUkpoAo/edit?us
 
 # 実装した機能についての画像やGIFおよびその説明
 おたよりをクリックすることで、投稿したpdfが表示可能。
-
-[![Image from Gyazo](https://i.gyazo.com/403a38d5bf5b85ddcc9ea9e2ff75a3c7.jpg)](https://gyazo.com/403a38d5bf5b85ddcc9ea9e2ff75a3c7)
+[![Image from Gyazo](https://i.gyazo.com/55c523ff51bd7f333f715564b1f34495.jpg)](https://gyazo.com/55c523ff51bd7f333f715564b1f34495)
 
 <br>身体測定のデータは取込用CSVファイルを利用して、インポート可能に。
 
