@@ -6,7 +6,7 @@ r = Random.new
 # 0歳児クラス
 10.times do |i|
   kids << Kid.new(
-    id: i
+    id: i,
     name: "大江　園児#{i+1}",
     gender_id: "#{rand(2..3)}",
     start_month: "2022年04月",
@@ -20,7 +20,7 @@ end
 # 1歳児クラス
 10.times do |i|
   kids << Kid.new(
-    id: i+10
+    id: i+10,
     name: "大江　園児#{i+11}",
     gender_id: "#{rand(2..3)}",
     start_month: "2021年04月",
@@ -34,7 +34,7 @@ end
 # 2歳児クラス
 5.times do |i|
   kids << Kid.new(
-    id: i+20
+    id: i+20,
     name: "大江　園児#{i+21}",
     gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
@@ -48,7 +48,7 @@ end
 # 3歳児クラス
 5.times do |i|
   kids << Kid.new(
-    id: i+25
+    id: i+25,
     name: "大江　園児#{i+26}",
     gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
