@@ -14,11 +14,11 @@ Password: 0404
 
 ## ログイン
 ### 保育士アカウント
-E-mail: test1@test.com
+E-mail: test1@test.com<br>
 Password: 000000y
 
 ### 保護者アカウント
-E-mail: test4@test.com
+E-mail: test4@test.com<br>
 Password: 000000y
 
 # 利用方法
@@ -33,15 +33,102 @@ Password: 000000y
 3. 園児の身長・体重のデータをCSVファイルに入力して、同ページからインポートすることで、一括で保存が可能。<br>
 また、各園児のページからも個別で身体測定データの登録が可能。
 
-アプリケーションを作成した背景	このアプリケーションを通じて、どのような人の、どのような課題を解決しようとしているのかを記載。
-洗い出した要件	要件定義をまとめたスプレッドシートのリンクを記載。
-実装した機能についての画像やGIFおよびその説明※	実装した機能について、それぞれどのような特徴があるのかを列挙する形で記載。画像はGyazoで、GIFはGyazoGIFで撮影すること。
-実装予定の機能	洗い出した要件の中から、今後実装予定の機能がある場合は、その機能を記載。
-データベース設計	ER図を添付。
-画面遷移図	画面遷移図を添付。
-開発環境	使用した言語・サービスを記載。
-ローカルでの動作方法※	git cloneしてから、ローカルで動作をさせるまでに必要なコマンドを記載。
-工夫したポイント※	制作背景・使用技術・開発方法・タスク管理など、企業へＰＲしたい事柄を記載。
+# アプリケーションを作成した背景
+保育園からのおたよりや身長・体重のデータは、紙面を連絡帳に挟む形式で行われている。
+その場合、おたより類の保管や挟むための作業には、保育士や保護者の手が掛かってしまう。
+また、必要な書類が見つからなくて困る経験をする人も多い。
+子供を見ながらそういった作業を行う時間を極力減らすことで、保育の時間や家庭での時間をより充実したものにして欲しいという願いを込めている。
+
+## 想定ペルソナ
+### 保育士
+長年、保育を専門に行なってきたので、保育には自信がある。<br>
+ITにはあまり詳しくないが、おたより作成や身長・体重の管理は他のシステムを利用しているので、なるべく簡単に連携したい。
+
+### 保護者
+30代の保護者。イヤイヤ期真っ盛りの2歳の息子がいる。<br>
+夕飯の献立を考えるために、保育園の献立表を確認することがよくある。<br>
+共働きで働いているので、少しでも子供と一緒に過ごしたい。
+
+# 洗い出した要件
+https://docs.google.com/spreadsheets/d/1utKkaMtELSqeDT9rEE0uR7SxQaUkpoAo/edit?usp=sharing&ouid=103784417175188076029&rtpof=true&sd=true
+
+# 実装した機能についての画像やGIFおよびその説明
+おたよりをクリックすることで、投稿したpdfが表示可能。
+
+[![Image from Gyazo](https://i.gyazo.com/403a38d5bf5b85ddcc9ea9e2ff75a3c7.jpg)](https://gyazo.com/403a38d5bf5b85ddcc9ea9e2ff75a3c7)
+
+<br>身体測定のデータは取込用CSVファイルを利用して、インポート可能に。
+
+[![Image from Gyazo](https://i.gyazo.com/cf87621b797c756a084ca828662f4e06.jpg)](https://gyazo.com/cf87621b797c756a084ca828662f4e06)
+
+<br>保育士権限と保護者権限を準備。保護者権限での閲覧に制限をかけることで、プライバシーに配慮。
+
+[![Image from Gyazo](https://i.gyazo.com/eca659a5dde0085893295d23a4f03f31.gif)](https://gyazo.com/eca659a5dde0085893295d23a4f03f31)
+
+
+
+# 実装予定の機能
+## スマートフォンアプリの開発
+保護者ペルソナは、PCよりスマートフォンを利用することを想定し、Androidアプリの開発を検討中。現在、開発に向けた学習を行なっている。
+
+## 機能の拡張
+下記の機能拡張を検討中。
+1. 保育士と保護者の日々の連絡を取り合うための連絡帳機能
+2. 保育料の支払い機能の実装
+3. 保護者による身体測定データの登録
+
+## フロントのモダン化
+見た目は使いやすさに直結する。より使いやすく見やすいビューとなるように整えたい。主に下記の点を検討している。
+1. スマートフォンで見れるようにレスポンシブ化。
+2. 各種データのソート機能。
+3. 身体測定データのグラフ化。
+
+# データベース設計
+![ER図](public/images/ER.png)
+
+# 画面遷移図
+![画面遷移図](public/images/ER.png)
+
+# 開発環境
+## フロントエンド
+HTML, CSS, JavaScript, PostcodeJP API
+
+## バックエンド
+Ruby, Ruby on Rails
+
+## データベース
+MySQL, SequelPro
+
+## Webサーバ(本番環境)
+HEROKU
+
+## ソース管理
+GitHub, GitHubDesktop
+
+## テスト
+RSpec
+
+## エディタ
+VSCode
+
+# ローカルでの動作方法
+$ git clone https://github.com/moe20200404/tsumiki-note
+$ cd tsumiki-note
+$ bundle install
+$ rails db:create
+$ rails db:migrate
+$ rails s
+
+# 工夫したポイント
+このアプリは、保育士と保護者の時間短縮を最大の目的としている。
+そのために極力入力が少なくなるように下記の工夫を行なった。
+1. 身体測定データの一括取込
+身体測定データは、他のソフトウェアなどでも管理している可能性が高い。
+連携しやすいようにCSVでの取込ができるように工夫した。
+2. 新規ユーザー登録時の住所検索
+PostcodeJP APIを導入することで、住所の入力の手間を省き、間違い防止に努めた。
+3. 保育士メニューの表示
+保育士の行う機能を1箇所に固めることで、素早く作業が行えるようにした。
 
 
 
@@ -64,7 +151,6 @@ Password: 000000y
 
 ### Association
 has_many :letters
-has_many :childcare_fees
 has_many :kids
 
 ## grade
@@ -113,17 +199,6 @@ belongs_to :kid
 |---------------------|-----------|--------------------------------|
 | title               | string    | null: false                    |
 | genre_id            | integer   | null: false                    |
-| user_id             | references| null: false                    |
-
-### Association
-belongs_to :user
-
-## childcare_fees
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| year_months         | string    | null: false                    |
-| fee                 | integer   | null: false                    |
 | user_id             | references| null: false                    |
 
 ### Association
