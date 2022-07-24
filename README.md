@@ -87,7 +87,7 @@ https://docs.google.com/spreadsheets/d/1utKkaMtELSqeDT9rEE0uR7SxQaUkpoAo/edit?us
 ![ER図](public/images/ER.png)
 
 # 画面遷移図
-![画面遷移図](public/images/ER.png)
+![画面遷移図](public/images/screen_transition_diagram.png)
 
 # 開発環境
 ## フロントエンド
