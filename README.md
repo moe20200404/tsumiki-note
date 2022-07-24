@@ -112,12 +112,12 @@ RSpec
 VSCode
 
 # ローカルでの動作方法
-$ git clone https://github.com/moe20200404/tsumiki-note
-$ cd tsumiki-note
-$ bundle install
-$ rails db:create
-$ rails db:migrate
-$ rails s
+$ git clone https://github.com/moe20200404/tsumiki-note<br>
+$ cd tsumiki-note<br>
+$ bundle install<br>
+$ rails db:create<br>
+$ rails db:migrate<br>
+$ rails s<br>
 
 # 工夫したポイント
 このアプリは、保育士と保護者の時間短縮を最大の目的としている。
