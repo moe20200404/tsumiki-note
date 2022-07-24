@@ -10,7 +10,7 @@ r = Random.new
     gender_id: "#{rand(2..3)}",
     start_month: "2022年04月",
     end_month: nil,
-    grade_id: 1,
+    grade_id: 0,
     birth_date: "#{Date.jd(rand(2459307..2459671))}",
     user_id: "#{i+4}"
   )
@@ -23,7 +23,7 @@ end
     gender_id: "#{rand(2..3)}",
     start_month: "2021年04月",
     end_month: nil,
-    grade_id: 2,
+    grade_id: 1,
     birth_date: "#{Date.jd(rand(2458942..2459306))}",
     user_id: "#{i+14}"
   )
@@ -36,7 +36,7 @@ end
     gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
     end_month: nil,
-    grade_id: 3,
+    grade_id: 2,
     birth_date: "#{Date.jd(rand(2458576..2458941))}",
     user_id: "#{i+24}"
   )
@@ -49,7 +49,7 @@ end
     gender_id: "#{rand(2..3)}",
     start_month: "2020年04月",
     end_month: nil,
-    grade_id: 4,
+    grade_id: 3,
     birth_date: "#{Date.jd(rand(2458211..2458575))}",
     user_id: "#{i+29}"
   )
