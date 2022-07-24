@@ -2,7 +2,7 @@
 ## Tsumiki-note
 
 # アプリケーション概要
-保育士と保護者をつなぎ、子供の成長を共に喜び合える。
+保育士と保護者をつなぎ、子供の成長を共に喜び合える時間を創出する。
 
 # URL
 https://tsumiki-note.herokuapp.com/
