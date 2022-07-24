@@ -123,7 +123,7 @@ $ rails s<br>
 このアプリは、保育士と保護者の時間短縮を最大の目的としている。
 そのために極力入力やクリックが少なくなるように下記の工夫を行なった。
 1. 身体測定データの一括取込
-身体測定データは、他のソフトウェアなどでも管理している可能性が高い。
+身体測定データは、他のソフトウェアなどでも管理している。
 連携しやすいようにCSVでの取込ができるように工夫した。
 2. 画面遷移の容易さ
 ルートページにジャンル毎の最新おたよりを設定することで、
@@ -133,75 +133,3 @@ PostcodeJP APIを導入することで、住所の入力の手間を省き、間
 4. 保育士メニューの表示
 保育士の行う機能を1箇所に固めることで、素早く作業が行えるようにした。
 また、許可のないユーザーがいる場合、すぐに気づくことがきるよう保育士メニューに無許可ユーザーの表示を設定した。
-
-#　テーブル設計
-## users
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| email               | string    | null: false, unique: true      |
-| encrypted_password  | string    | null: false                    |
-| name                | string    | null: false                    |
-| authority_id        | integer   | null: false                    |
-| permission          | boolean   | null: false                    |
-| postal_code         | string    | null: false                    |
-| pref                | string    | null: false                    |
-| city                | string    | null: false                    |
-| town                | string    | null: false                    |
-| building            | string    |                                |
-| phone_number        | string    | null: false                    |
-
-### Association
-has_many :letters
-has_many :kids
-
-## grade
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| age                 | integer   | null: false                    |
-| name                | string    | null: false, unique: true      |
-
-### Association
-has_many :kids
-
-## kid
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| name                | string    | null: false                    |
-| birth_date          | date      | null: false                    |
-| gender_id           | integer   | null: false                    |
-| start_month         | string    | null: false                    |
-| end_month           | string    |                                |
-| grade_id            | references| null: false                    |
-| user_id             | references|                                |
-
-### Association
-belongs_to :grade
-belongs_to :user
-has_many :growths
-
-## growths
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| month               | string    | null: false                    |
-| inspection_date     | date      | null: false                    |
-| weight              | float	    | null: false                    |
-| height              | float	    | null: false                    |
-| kid_id              | references| null: false                    |
-
-### Association
-belongs_to :kid
-
-## letters
-
-| Column              | Type      | Options                        |
-|---------------------|-----------|--------------------------------|
-| title               | string    | null: false                    |
-| genre_id            | integer   | null: false                    |
-| user_id             | references| null: false                    |
-
-### Association
-belongs_to :user
