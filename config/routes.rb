@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: "letters#index"
+  get 'pages/home'
   resources :letters
   resources :grades, only: [:index, :new, :create, :edit, :update]
   resources :kids,except:[:destroy] do

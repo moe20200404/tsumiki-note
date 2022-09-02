@@ -65,3 +65,4 @@ gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
 gem 'roo'
 gem "aws-sdk-s3", require: false
+gem 'high_voltage', '~> 3.1'
