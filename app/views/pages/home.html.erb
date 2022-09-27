@@ -1,26 +1,100 @@
-<div class="navigation mobile" style="display: block;">
-  <div class="home_navi">
-    <ul class="navi_menu_list">
-      <li class="navi_menu">
-      ナビメニュー1
-      </li>
-      <li class="navi_menu">
-      ナビメニュー2
-      </li>
-      <li class="navi_menu">
-      ナビメニュー3
-      </li>
-      <li class="navi_menu">
-      ナビメニュー4
-      </li>
-  </div>
-</div>
+<div class="wrapper">
 
-<div class="picture">
-  <div class="base_picture">
-  <%= link_to image_tag("23418604_s.jpg", class:"kid_picture"), "/" %>
-    <div class="flame_picture">
-    <%= link_to image_tag("animal_flame.png", class:"animal_picture"), "/" %>
+  <div class="navigation mobile" style="display: block;">
+    <div class="home_navi">
+      <ul class="navi_menu_list">
+        <li class="navi_menu">
+          <%= link_to "新着情報", "#new_news", class: "navi_menu_a" %>
+        </li>
+        <li class="navi_menu">
+          <%= link_to "Oe nursery schoolについて", "#about", class: "navi_menu_a" %>
+        </li>
+        <li class="navi_menu">
+          <%= link_to "園での生活", "#life", class: "navi_menu_a" %>
+        </li>
+        <li class="navi_menu">
+          <%= link_to "お問合せ", "#contact", class: "navi_menu_a" %>
+        </li>
     </div>
   </div>
+
+  <div class="picture">
+    <img src="/assets/24059769_s.jpg", class="kid_picture", alt="" >
+    <img src="/assets/animal_flame.png", class="animal_picture", alt="" >
+  </div>
+
+  <section class="content_fullwidth_padded" id="new_news">
+      <div class="title_grid_full">
+        <h2 class="home_h2">新着情報</h2>
+      </div>
+        <hr class="hr1">
+      
+    <h3>2022/09/30 Oe nursery schoolの一時保育について</h3>
+    <h3>2022/09/30 保護者用ログインページのご案内</h3>
+
+  </section>
+  <section class="content_fullwidth_padded" id="about">
+      <div class="title_grid_full">
+        <h2 class="home_h2">Oe nursery schoolについて</h2>
+      </div>
+        <hr class="hr1">
+      
+    <h3 class="home_h3">ごあいさつ</h3>
+      <p class="greeting">
+      Tsumiki-noteへアクセスいただき、ありがとうございます。<br>
+      本アプリケーションは、大江真未子のポートフォリオとして作成しました。<br>
+      保育士と保護者の連絡をスムーズに取り合うことで、
+      保育の時間や家庭での時間をより充実したものにして欲しいという願いを込めています。<br>
+      ぜひ、ご覧くださいませ。
+      </p>
+
+    <h3 class="home_h3">テスト用アカウントのご紹介</h3>
+      <p class="test_account">
+
+      ログイン<br>
+      保育士アカウント<br>
+      E-mail: test1@test.com<br>
+      Password: 000000y<br>
+<br>
+      保護者アカウント<br>
+      E-mail: test4@test.com<br>
+      Password: 000000y
+      </p>
+
+
+
+  </section>
+  <section class="content_fullwidth_padded" id="life">
+      <div class="title_grid_full">
+        <h2 class="home_h2">園での生活</h2>
+      </div>
+        <hr class="hr1">
+
+    <h3 class="home_h3">保育方針</h3>
+    <p class="orgin_policy">
+      子供たちの主体性を大事に発言・行動・思いを尊重する。
+    </p>
+      
+    <h3 class="home_h3">1日の流れ</h3>
+      <br>
+
+    <h3 class="home_h3">年間行事</h3>
+      <br>
+
+
+  </section>
+
+
+
+  <section class="content_fullwidth_padded" id="contact">
+      <div class="title_grid_full">
+        <h2 class="home_h2">お問合せ</h2>
+      </div>
+        <hr class="hr1">
+      <p class="contact_details">
+      大江　真未子　oe.mamiko20200404@gmail.com
+      </p>
+
+  </section>
+
 </div>
